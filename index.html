@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ledgerline LedgerOS: Trusted AI for Finance Teams</title>
+  <meta name="description" content="Ledgerline LedgerOS is the governed, Excel-connected operating system for finance teams. Accurate, repeatable and auditable AI outputs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ============ ICON SPRITE ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
+    <symbol id="i-pie" viewBox="0 0 24 24"><path d="M21 12A9 9 0 1 1 12 3v9z"/><path d="M15 3.5A9 9 0 0 1 20.5 9H15z"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><path d="M3 9l2-5h14l2 5z"/><path d="M5 9v12h14V9"/><path d="M10 21v-6h4v6"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 7h1M14 7h1M9 11h1M14 11h1M9 15h1M14 15h1M10 21v-3h4v3"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></symbol>
+    <symbol id="i-factory" viewBox="0 0 24 24"><path d="M2 21h20M3 21V10l5 3v-3l5 3v-3l5 3V4h3v17"/></symbol>
+    <symbol id="i-people" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></symbol>
+    <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3 10l9-6 9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 21h18"/></symbol>
+    <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M3 7h18v4a2 2 0 0 0 0 2v4H3v-4a2 2 0 0 0 0-2z"/><path d="M14 7v10" stroke-dasharray="2 2"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M1 5h13v11H1zM14 9h4l4 4v3h-8z"/><circle cx="5.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 2v6M15 2v6M6 8h12v4a6 6 0 0 1-12 0zM12 18v4"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5M8 22h8"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 2h6M10 2v6L4 19a2 2 0 0 0 1.8 3h12.4a2 2 0 0 0 1.8-3L14 8V2M7 14h10"/></symbol>
+    <symbol id="i-table" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-6 7-6s7 2 7 6M16 4a4 4 0 0 1 0 8M22 21c0-3-2-5-4-6"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></symbol>
+    <symbol id="i-checklist" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M20 7V5a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15v12H5a2 2 0 0 1-2-2V6"/><circle cx="16" cy="14" r="1.5"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></symbol>
+    <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5h13L22 12v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-6z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9h-4a2 2 0 0 0 0 4h2a2 2 0 0 1 0 4H9M12 6v2M12 16v2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v11h14V10"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4"/><path d="M21 13v2a3 3 0 0 1-3 3H3"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="m6 15 6-6 6 6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4v16l13-8z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-quote" viewBox="0 0 71 34"><path fill="currentColor" stroke="none" d="M0 34V20.5C0 9 6 2 17 0l2 5c-6 2-9 6-9.5 11H17v18zm26 0V20.5C26 9 32 2 43 0l2 5c-6 2-9 6-9.5 11H43v18z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M17.8 3h3.1l-6.8 7.8L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.3-8.3L1.9 3h6.4l4.4 5.8zm-1.1 16.2h1.7L7.4 4.7H5.6z"/></symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.8 15V9l5.7 3z"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="container header__inner">
+    <a href="#" class="logo" aria-label="Ledgerline home">
+      <span class="logo__mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="logo__word">ledgerline</span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Main">
+      <ul class="nav-menu" id="navMenu"><!-- built by script.js --></ul>
+      <div class="nav-mobile-actions">
+        <a href="#" class="login-link">Login</a>
+        <a href="#" class="btn-demo" data-demo>Request Demo</a>
+      </div>
+    </nav>
+
+    <div class="header__actions">
+      <div class="search" id="search">
+        <button class="icon-btn search__toggle" aria-label="Search" id="searchToggle"><svg class="ico"><use href="#i-search"/></svg></button>
+        <form class="search__form" role="search" onsubmit="return false">
+          <input type="search" placeholder="Search…" aria-label="Search for" />
+        </form>
+      </div>
+      <a href="#" class="login-link">Login</a>
+      <a href="#" class="btn-demo" data-demo>Request Demo</a>
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false"><svg class="ico"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero__dark" id="heroDark">
+      <div class="hero__glow" aria-hidden="true">
+        <div class="hero__glow-plus"><span class="hero__glow-arm"></span></div>
+        <div class="hero__glow-cross"><span class="hero__glow-arm"></span></div>
+      </div>
+
+      <div class="container hero__inner">
+        <p class="hero__eyebrow reveal">#1 OS for Finance Teams</p>
+        <h1 class="hero__title reveal">Transform the Office of the CFO</h1>
+        <p class="hero__subhead reveal">Feel confident that every financial AI output is accurate, governed, repeatable and auditable. Without leaving Excel.</p>
+
+        <div class="hero__cta-wrap reveal">
+          <a class="btn btn--primary" href="#" data-demo>Request a Demo <svg class="ico ico--sm"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--secondary" href="#cvs">See it in action</a>
+        </div>
+
+        <div class="trust-badges reveal">
+          <div class="trust-badge">
+            <span class="tb-logo tb-logo--capterra"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M2 10.5 22 3l-7.5 20-2.5-9z" fill="#ff9d28"/><path d="M2 10.5 12 14l2.5 9z" fill="#68c5ed"/><path d="M12 14 22 3 2 10.5z" fill="#044d80" opacity=".35"/></svg>Capterra</span>
+            <span class="tb-meta"><span class="tb-text">Capterra: 4.8</span><span class="tb-stars" data-stars="4.8"></span></span>
+          </div>
+          <div class="trust-badge">
+            <span class="tb-logo tb-logo--g2">G2</span>
+            <span class="tb-meta"><span class="tb-text">G2: 4.9</span><span class="tb-stars" data-stars="4.9"></span></span>
+          </div>
+          <div class="trust-badge trust-badge--ms">
+            <span class="ms-squares" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            <span class="ms-text"><b>Microsoft</b><small>Solutions Partner</small></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__tour">
+        <div class="container">
+          <div class="hero__tour-wrap reveal">
+            <!-- App mockup -->
+            <div class="app">
+              <div class="app__bar">
+                <span class="dots"><i></i><i></i><i></i></span>
+                <span class="app__url">app.ledgerline.com/dashboards/executive-overview</span>
+              </div>
+              <div class="app__body">
+                <aside class="app__side">
+                  <div class="app__brand"><span class="logo__mark logo__mark--sm"><i></i><i></i><i></i></span> LedgerOS</div>
+                  <ul>
+                    <li class="is-active"><svg class="ico"><use href="#i-grid"/></svg>Dashboards</li>
+                    <li><svg class="ico"><use href="#i-file"/></svg>Reports</li>
+                    <li><svg class="ico"><use href="#i-trend"/></svg>Planning</li>
+                    <li><svg class="ico"><use href="#i-checklist"/></svg>Close</li>
+                    <li><svg class="ico"><use href="#i-wallet"/></svg>Cash</li>
+                    <li><svg class="ico"><use href="#i-card"/></svg>Spend</li>
+                    <li><svg class="ico"><use href="#i-inbox"/></svg>Desk</li>
+                    <li><svg class="ico"><use href="#i-layers"/></svg>Data</li>
+                  </ul>
+                  <div class="app__side-ai"><svg class="ico"><use href="#i-spark"/></svg>Ask LedgerOS AI</div>
+                </aside>
+                <div class="app__main">
+                  <div class="app__head">
+                    <div>
+                      <div class="app__crumb">Dashboards / Executive</div>
+                      <div class="app__title">Executive Overview <span>FY2026</span></div>
+                    </div>
+                    <div class="app__filters">
+                      <span class="chip">Entity: All (14)</span>
+                      <span class="chip">USD</span>
+                      <span class="chip chip--pink">Actual vs Budget</span>
+                    </div>
+                  </div>
+                  <div class="kpis">
+                    <div class="kpi"><span class="kpi__l">Revenue YTD</span><b>$48.2M</b><em class="up">▲ 12.4%</em><svg class="spark" viewBox="0 0 100 30" preserveAspectRatio="none"><polyline points="0,24 12,22 24,23 36,17 48,18 60,12 72,13 84,7 100,4"/></svg></div>
+                    <div class="kpi"><span class="kpi__l">Gross margin</span><b>62.8%</b><em class="up">▲ 1.9 pt</em><svg class="spark" viewBox="0 0 100 30" preserveAspectRatio="none"><polyline points="0,20 12,21 24,18 36,19 48,15 60,16 72,12 84,11 100,9"/></svg></div>
+                    <div class="kpi"><span class="kpi__l">Operating expenses</span><b>$18.6M</b><em class="down">▼ 3.1%</em><svg class="spark" viewBox="0 0 100 30" preserveAspectRatio="none"><polyline points="0,8 12,10 24,9 36,13 48,12 60,15 72,17 84,18 100,21"/></svg></div>
+                    <div class="kpi"><span class="kpi__l">Cash on hand</span><b>$21.4M</b><em class="up">▲ 8.7%</em><svg class="spark" viewBox="0 0 100 30" preserveAspectRatio="none"><polyline points="0,22 12,18 24,20 36,15 48,16 60,11 72,13 84,9 100,6"/></svg></div>
+                  </div>
+                  <div class="app__grid">
+                    <div class="panel panel--chart">
+                      <div class="panel__head"><b>Revenue vs Budget</b><span class="legend"><i class="lg lg--a"></i>Actual <i class="lg lg--b"></i>Budget</span></div>
+                      <div class="bars" id="heroBars"></div>
+                    </div>
+                    <div class="panel panel--donut">
+                      <div class="panel__head"><b>OpEx by department</b></div>
+                      <div class="donut-wrap">
+                        <div class="donut"><span>$18.6M</span></div>
+                        <ul class="donut-legend">
+                          <li><i style="background:#f93576"></i>R&amp;D <b>38%</b></li>
+                          <li><i style="background:#ffa310"></i>Sales <b>27%</b></li>
+                          <li><i style="background:#578aff"></i>G&amp;A <b>21%</b></li>
+                          <li><i style="background:#00b386"></i>Marketing <b>14%</b></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="panel panel--table">
+                      <div class="panel__head"><b>P&amp;L summary</b><span class="muted">Q3 · consolidated</span></div>
+                      <table class="mini-table">
+                        <thead><tr><th>Line</th><th>Actual</th><th>Budget</th><th>Var.</th></tr></thead>
+                        <tbody>
+                          <tr><td>Revenue</td><td>$16.9M</td><td>$15.8M</td><td class="up">+7.0%</td></tr>
+                          <tr><td>COGS</td><td>$6.3M</td><td>$6.1M</td><td class="down">+3.3%</td></tr>
+                          <tr><td>Gross profit</td><td>$10.6M</td><td>$9.7M</td><td class="up">+9.3%</td></tr>
+                          <tr><td>OpEx</td><td>$6.2M</td><td>$6.4M</td><td class="up">−3.1%</td></tr>
+                          <tr><td><b>EBITDA</b></td><td><b>$4.4M</b></td><td><b>$3.3M</b></td><td class="up"><b>+33%</b></td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="panel panel--ai">
+                      <div class="panel__head"><b><svg class="ico ico--pink"><use href="#i-spark"/></svg> LedgerOS AI</b><span class="muted">Governed</span></div>
+                      <div class="chat">
+                        <div class="msg msg--user">Why did gross margin beat budget in Q3?</div>
+                        <div class="msg msg--ai">Gross margin rose <b>1.9 pt</b> mainly from:
+                          <ul><li>Freight costs −11% after carrier renegotiation</li><li>Product mix shift to Enterprise (+6% share)</li></ul>
+                          <span class="src">Sources: GL · NetSuite · Salesforce</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a class="btn btn--primary hero__tour-btn" href="#" data-demo>Explore Ledgerline yourself <svg class="ico ico--sm"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LOGOS ============ -->
+  <section class="logos">
+    <div class="container">
+      <p class="logos__eyebrow">Finance teams at 2000+ companies run on Ledgerline</p>
+      <div class="marquee" aria-label="Customers">
+        <div class="marquee__track" id="logoTrack"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXCEL ============ -->
+  <section class="excel">
+    <div class="container excel__inner">
+      <div class="excel__text reveal">
+        <h2 class="excel__h">Make every AI output accurate, repeatable, and auditable</h2>
+        <p class="excel__body">Ledgerline LedgerOS is the governed, Excel-connected operating layer for finance, linking insights and decision-making to live data from 600+ sources. It provides version control, audit trails, permission settings, centralized business logic, and reduces costs. Keep the Excel models you trust while fixing the chaos of disconnected data.</p>
+        <a class="pill-link" href="#">Learn more</a>
+      </div>
+      <div class="excel__media reveal">
+        <div class="xl">
+          <div class="xl__title"><span class="dots"><i></i><i></i><i></i></span>Q3_Board_Pack.xlsx — Excel</div>
+          <div class="xl__ribbon"><span>File</span><span>Home</span><span>Insert</span><span>Formulas</span><span>Data</span><span>Review</span><span class="is-active">Ledgerline</span></div>
+          <div class="xl__formula"><b>fx</b><code>=LL.GET("Revenue", "FY26", "Actual", "All Entities")</code></div>
+          <div class="xl__body">
+            <div class="xl__sheet" id="xlSheet"></div>
+            <div class="xl__addin">
+              <div class="xl__addin-head"><span class="logo__mark logo__mark--sm"><i></i><i></i><i></i></span> Ledgerline</div>
+              <button class="xl__refresh">↻ Refresh data</button>
+              <p class="xl__sync"><i></i> Synced 2 min ago</p>
+              <ul class="xl__sources">
+                <li><svg class="ico"><use href="#i-check"/></svg>NetSuite GL</li>
+                <li><svg class="ico"><use href="#i-check"/></svg>Salesforce</li>
+                <li><svg class="ico"><use href="#i-check"/></svg>ADP Payroll</li>
+                <li><svg class="ico"><use href="#i-check"/></svg>Bank feeds (6)</li>
+              </ul>
+              <div class="xl__audit">Version 14 · Audit trail on</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOLUTION TABS ============ -->
+  <section class="solution">
+    <div class="container">
+      <div class="solution__head reveal">
+        <h2 class="solution__h">Every finance process runs through <span class="accent">LedgerOS</span></h2>
+        <p class="solution__copy">LedgerOS is the foundation for every workflow in the CFO’s office including reporting, planning, analysis, cash forecasting, spend control, and month-end close. Use any AI tool you want with the confidence of a single source of truth.</p>
+      </div>
+
+      <div class="sx">
+        <div class="sx__menu" role="tablist" id="sxMenu">
+          <button class="sx__tab is-active" role="tab" data-panel="fpa" style="--acc:#f93576"><svg class="ico"><use href="#i-trend"/></svg>FP&amp;A</button>
+          <button class="sx__tab" role="tab" data-panel="mec" style="--acc:#578aff"><svg class="ico"><use href="#i-checklist"/></svg>Month-End Close</button>
+          <button class="sx__tab" role="tab" data-panel="cash" style="--acc:#00b386"><svg class="ico"><use href="#i-wallet"/></svg>Cash</button>
+          <button class="sx__tab" role="tab" data-panel="spend" style="--acc:#6969ff"><svg class="ico"><use href="#i-card"/></svg>Spend</button>
+          <button class="sx__tab" role="tab" data-panel="desk" style="--acc:#00c0c4"><svg class="ico"><use href="#i-inbox"/></svg>Desk</button>
+        </div>
+
+        <div class="sx__panels" id="sxPanels">
+
+          <!-- FP&A -->
+          <article class="sx__panel" data-panel="fpa" style="--acc:#f93576">
+            <div class="sx__fx" aria-hidden="true"><span></span></div>
+            <h3 class="sx__title">Ledgerline FP&amp;A</h3>
+            <div class="sx__text">
+              <p>Empower your finance team with an end-to-end FP&amp;A solution built for Excel users. Live data, web-enabled workflows, and AI-native interfaces unlock the full potential of all your organizational data.</p>
+              <a class="sx__cta" href="#">Learn more →</a>
+              <div class="sx__pills" data-pills="Excel-Native|Automated Consolidation|Live Planning|Budgeting & Forecasting|Real-Time Dashboards|AI-Powered Insights|Single Source of Truth|Scenario Modeling|600+ Integrations|No IT Required|Web-Enabled Workflows|Anomaly Detection"></div>
+            </div>
+            <div class="sx__media">
+              <div class="mock">
+                <div class="mock__head"><b>Budget vs Actual</b><span class="seg"><i class="on">Base</i><i>Upside</i><i>Downside</i></span></div>
+                <div class="hbars">
+                  <div class="hbar"><span>Sales</span><div><i style="width:86%"></i><s style="left:80%"></s></div><em>107%</em></div>
+                  <div class="hbar"><span>Marketing</span><div><i style="width:64%"></i><s style="left:72%"></s></div><em>89%</em></div>
+                  <div class="hbar"><span>R&amp;D</span><div><i style="width:78%"></i><s style="left:76%"></s></div><em>102%</em></div>
+                  <div class="hbar"><span>G&amp;A</span><div><i style="width:52%"></i><s style="left:58%"></s></div><em>90%</em></div>
+                  <div class="hbar"><span>Ops</span><div><i style="width:70%"></i><s style="left:66%"></s></div><em>106%</em></div>
+                </div>
+                <div class="mock__sub"><b>Rolling forecast</b><span class="muted">12 mo</span></div>
+                <svg class="area" viewBox="0 0 300 110" preserveAspectRatio="none">
+                  <defs><linearGradient id="gFpa" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#f93576" stop-opacity=".35"/><stop offset="1" stop-color="#f93576" stop-opacity="0"/></linearGradient></defs>
+                  <path d="M0 90 L25 82 L50 85 L75 70 L100 72 L125 60 L150 62 L175 50 L200 48 L225 40 L250 35 L275 28 L300 22 L300 110 L0 110Z" fill="url(#gFpa)"/>
+                  <polyline points="0,90 25,82 50,85 75,70 100,72 125,60 150,62 175,50" fill="none" stroke="#f93576" stroke-width="2.5"/>
+                  <polyline points="175,50 200,48 225,40 250,35 275,28 300,22" fill="none" stroke="#f93576" stroke-width="2.5" stroke-dasharray="5 4"/>
+                </svg>
+                <div class="ai-note"><svg class="ico"><use href="#i-spark"/></svg><span><b>Anomaly:</b> Marketing spend 11% under plan in Sept — 3 campaigns delayed.</span></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- MEC -->
+          <article class="sx__panel" data-panel="mec" style="--acc:#578aff" hidden>
+            <div class="sx__fx" aria-hidden="true"><span></span></div>
+            <h3 class="sx__title">Ledgerline Month-End Close</h3>
+            <div class="sx__text">
+              <p>Run a faster, controlled close — checklists, reconciliations, and task workflows that keep every entity on track and every number traceable.</p>
+              <a class="sx__cta" href="#">Learn more →</a>
+              <div class="sx__pills" data-pills="Automated Reconciliation|Close Workflows|Customizable Checklists|Task Management|Audit Trails|Approvals & Sign-Off|Built-In Documentation|Real-Time Dashboards|200+ Integrations|Audit-Ready|File Connectivity|Faster Close"></div>
+            </div>
+            <div class="sx__media">
+              <div class="mock">
+                <div class="mock__head"><b>September close</b><span class="muted">Day 3 of 5</span></div>
+                <div class="ring-row">
+                  <div class="ring" style="--p:78"><span>78%</span></div>
+                  <div class="ring-stats"><p><b>46</b> of 59 tasks done</p><p><b>12</b> reconciliations auto-matched</p><p class="warn"><b>2</b> items need review</p></div>
+                </div>
+                <ul class="tasks">
+                  <li class="done"><i></i>Bank reconciliation — US entities<span class="st st--done">Done</span><em>JM</em></li>
+                  <li class="done"><i></i>Accrued expenses review<span class="st st--done">Done</span><em>AR</em></li>
+                  <li><i></i>Intercompany eliminations<span class="st st--rev">In review</span><em>KT</em></li>
+                  <li><i></i>Revenue recognition schedule<span class="st st--rev">In review</span><em>SP</em></li>
+                  <li><i></i>Fixed asset depreciation<span class="st st--pend">Pending</span><em>DL</em></li>
+                  <li><i></i>Controller sign-off<span class="st st--pend">Pending</span><em>CF</em></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- CASH -->
+          <article class="sx__panel" data-panel="cash" style="--acc:#00b386" hidden>
+            <div class="sx__fx" aria-hidden="true"><span></span></div>
+            <h3 class="sx__title">Ledgerline Cash</h3>
+            <div class="sx__text">
+              <p>See cash positions across every bank in one place, forecast 13 weeks out, and reconcile balances with confidence.</p>
+              <a class="sx__cta" href="#">Learn more →</a>
+              <div class="sx__pills" data-pills="Live Bank Visibility|Cash Flow Forecasting|Liquidity Planning|Live Drill-Downs|Multi-Entity View|Multi-Currency|Dashboards & Visualizations|Excel Integration|Audit-Grade Accuracy|Real-Time Cash Position|Real-Time Bank Sync|Variance Investigation"></div>
+            </div>
+            <div class="sx__media">
+              <div class="mock">
+                <div class="mock__head"><b>Cash position</b><span class="muted">Live · 6 banks</span></div>
+                <div class="big-num">$21,438,906 <em class="up">▲ 8.7%</em></div>
+                <svg class="area" viewBox="0 0 300 110" preserveAspectRatio="none">
+                  <defs><linearGradient id="gCash" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#00b386" stop-opacity=".35"/><stop offset="1" stop-color="#00b386" stop-opacity="0"/></linearGradient></defs>
+                  <path d="M0 70 L23 64 L46 72 L69 58 L92 61 L115 50 L138 55 L161 44 L184 47 L207 36 L230 40 L253 30 L276 34 L300 24 L300 110 L0 110Z" fill="url(#gCash)"/>
+                  <polyline points="0,70 23,64 46,72 69,58 92,61 115,50 138,55 161,44 184,47 207,36 230,40 253,30 276,34 300,24" fill="none" stroke="#00b386" stroke-width="2.5"/>
+                </svg>
+                <div class="mock__sub"><b>Accounts</b><span class="muted">13-week forecast →</span></div>
+                <ul class="accounts">
+                  <li><span class="bank" style="background:#0b5cab">OP</span>Operating ••4821<b>$9.82M</b></li>
+                  <li><span class="bank" style="background:#00b386">PY</span>Payroll ••1190<b>$3.14M</b></li>
+                  <li><span class="bank" style="background:#ffa310">EU</span>EUR Treasury ••7702<b>€4.06M</b></li>
+                  <li><span class="bank" style="background:#6969ff">RV</span>Reserve ••3358<b>$4.10M</b></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- SPEND -->
+          <article class="sx__panel" data-panel="spend" style="--acc:#6969ff" hidden>
+            <div class="sx__fx" aria-hidden="true"><span></span></div>
+            <h3 class="sx__title">Ledgerline Spend</h3>
+            <div class="sx__text">
+              <p>Connect the full spend lifecycle to your financial plan. See the impact against budget before money is committed, automate routine work with AI, and keep spend coded and connected through to actuals.</p>
+              <a class="sx__cta" href="#">Learn more →</a>
+              <div class="sx__pills" data-pills="Requests & Purchase Orders|AI Workflows|AP ticket management|Invoice Validation & Matching|Smart Approvals & Payments|Corporate Cards|Transaction Coding|Contract Management|Vendor Master|Automated ERP Reconciliation|App Catalog"></div>
+            </div>
+            <div class="sx__media">
+              <div class="mock">
+                <div class="mock__head"><b>Purchase requests</b><span class="muted">4 awaiting you</span></div>
+                <ul class="reqs">
+                  <li><div><b>Cloud hosting renewal</b><span>Engineering · AWS</span></div><strong>$84,000</strong><div class="impact"><i style="width:72%"></i></div><small>72% of Q4 budget</small><span class="actions"><button class="ok">Approve</button><button>Review</button></span></li>
+                  <li><div><b>Trade show booth</b><span>Marketing · Expo Co.</span></div><strong>$22,500</strong><div class="impact"><i style="width:94%;background:#ffa310"></i></div><small>94% of Q4 budget</small><span class="actions"><button class="ok">Approve</button><button>Review</button></span></li>
+                  <li><div><b>Laptops (12)</b><span>IT · Dell</span></div><strong>$19,680</strong><div class="impact"><i style="width:41%"></i></div><small>41% of Q4 budget</small><span class="actions"><button class="ok">Approve</button><button>Review</button></span></li>
+                </ul>
+                <div class="ai-note"><svg class="ico"><use href="#i-spark"/></svg><span>Invoice #INV-2291 matched to PO-1184 and coded to <b>6120 · Software</b>.</span></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- DESK -->
+          <article class="sx__panel" data-panel="desk" style="--acc:#00c0c4" hidden>
+            <div class="sx__fx" aria-hidden="true"><span></span></div>
+            <h3 class="sx__title">Ledgerline Desk</h3>
+            <div class="sx__text">
+              <p>Bring every finance request into one queue, connect it to the underlying financial data, and let AI draft the response for review.</p>
+              <a class="sx__cta" href="#">Learn more →</a>
+              <div class="sx__pills" data-pills="Unified Ticket Queue|AI-Drafted Responses|Connected Financial Data|Multi-Channel Intake|Automated Routing|Configurable SLAs|Team-Based Permissions|Ownership & Status Tracking"></div>
+            </div>
+            <div class="sx__media">
+              <div class="mock">
+                <div class="mock__head"><b>Finance queue</b><span class="muted">SLA 4h</span></div>
+                <ul class="tickets">
+                  <li class="is-active"><span class="tag">Slack</span><b>Can I see Q3 travel spend for Sales EMEA?</b><em>2m</em></li>
+                  <li><span class="tag">Email</span><b>Vendor asking about payment status #8812</b><em>18m</em></li>
+                  <li><span class="tag">Form</span><b>Headcount budget for 2 new hires</b><em>1h</em></li>
+                </ul>
+                <div class="draft">
+                  <div class="draft__head"><svg class="ico"><use href="#i-spark"/></svg> AI draft · ready for review</div>
+                  <p>Hi Maya — Sales EMEA travel spend for Q3 was <b>$142,380</b>, which is <b>6% under</b> budget. The largest items were the Berlin offsite ($38.2K) and client visits in London ($27.9K). Full breakdown attached.</p>
+                  <div class="draft__foot"><span class="src">Linked: GL 6410 · Expensify</span><button>Send</button></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AI CONNECTOR ============ -->
+  <section class="aic">
+    <div class="container">
+      <div class="aic__card">
+        <div class="aic__text reveal">
+          <h2 class="aic__h">LedgerOS AI Connector</h2>
+          <p class="aic__body">Connect your governed financial data to leading AI tools, so your team can unlock the full potential of AI with trusted, mapped data. Built-in permissions and audit trail.</p>
+          <a class="pill-link" href="#">Explore the connector →</a>
+        </div>
+        <div class="aic__media reveal">
+          <div class="aiw">
+            <div class="aiw__top"><span class="dots"><i></i><i></i><i></i></span><span class="aiw__model">AI Assistant ▾</span><span class="aiw__conn"><i></i> Connected to LedgerOS</span></div>
+            <div class="aiw__body">
+              <div class="msg msg--user">Compare Q3 OpEx to budget by department and flag anything over 5%.</div>
+              <div class="msg msg--ai">
+                <div class="tool"><svg class="ico"><use href="#i-link"/></svg> ledgeros.query <span>· opex_by_dept · Q3 FY26 · governed</span></div>
+                Here’s Q3 operating expense vs budget (consolidated, USD):
+                <table class="mini-table">
+                  <thead><tr><th>Dept</th><th>Actual</th><th>Budget</th><th>Var.</th></tr></thead>
+                  <tbody>
+                    <tr><td>R&amp;D</td><td>$2.36M</td><td>$2.30M</td><td>+2.6%</td></tr>
+                    <tr class="flag"><td>Sales</td><td>$1.71M</td><td>$1.58M</td><td>+8.2% ⚑</td></tr>
+                    <tr><td>G&amp;A</td><td>$1.29M</td><td>$1.41M</td><td>−8.5%</td></tr>
+                    <tr><td>Marketing</td><td>$0.84M</td><td>$1.11M</td><td>−24%</td></tr>
+                  </tbody>
+                </table>
+                <span class="src">Sales overspend is driven by commissions on the 3 enterprise deals closed in September.</span>
+              </div>
+            </div>
+            <div class="aiw__input">Ask anything about your financials… <span><svg class="ico"><use href="#i-arrow"/></svg></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="ftest">
+    <div class="container">
+      <div class="ftest__head reveal">
+        <h2 class="ftest__h">Finance runs on Ledgerline</h2>
+        <p class="ftest__sub">Real stories from CFOs and VPs of Finance who replaced manual processes with the AI operating system finance teams trust.</p>
+        <a class="pill-link" href="#">Customer stories →</a>
+      </div>
+      <div class="ftest__carousel">
+        <button class="ftest__arrow ftest__arrow--prev" id="ftPrev" aria-label="Previous">‹</button>
+        <button class="ftest__arrow ftest__arrow--next" id="ftNext" aria-label="Next">›</button>
+        <div class="ftest__track" id="ftTrack"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AI INTEGRATIONS ============ -->
+  <section class="ai">
+    <div class="container">
+      <div class="ai__head reveal">
+        <h2 class="ai__h">Reliable and trustworthy AI outputs for your finance team</h2>
+        <p class="ai__body">Connect your LedgerOS to AI tools</p>
+      </div>
+    </div>
+    <div class="aid">
+      <div class="aid__track" id="intTrack"></div>
+      <a class="aid__explore" href="#">Explore integrations →</a>
+    </div>
+  </section>
+
+  <!-- ============ CLAUDE VS ============ -->
+  <section class="cvs" id="cvs">
+    <div class="container cvs__inner">
+      <div class="cvs__text reveal">
+        <h2 class="cvs__h">Claude vs. Claude + LedgerOS. Same AI, better results.</h2>
+        <p class="cvs__body">See how connecting your AI tools to governed financial data and business context turns AI responses into financial insights you can trust and act on.</p>
+      </div>
+      <div class="cvs__media reveal">
+        <a class="cvs__teaser" href="#" id="cvsOpen" aria-label="Play comparison">
+          <div class="vs">
+            <div class="vs__col">
+              <div class="vs__label">Claude</div>
+              <div class="msg msg--user">What was our EBITDA margin last quarter?</div>
+              <div class="msg msg--ai msg--weak">I don’t have access to your company’s financial data. If you share your income statement, I can help you calculate it…</div>
+            </div>
+            <div class="vs__col vs__col--good">
+              <div class="vs__label">Claude <b>+ LedgerOS</b></div>
+              <div class="msg msg--user">What was our EBITDA margin last quarter?</div>
+              <div class="msg msg--ai">Q3 EBITDA margin was <b>26.0%</b> ($4.4M on $16.9M revenue), up <b>5.1 pt</b> vs budget. <span class="src">GL · consolidated · 14 entities</span></div>
+            </div>
+          </div>
+          <span class="cvs__play"><svg class="ico"><use href="#i-play"/></svg></span>
+        </a>
+      </div>
+    </div>
+    <dialog class="cvs__modal" id="cvsModal">
+      <button class="cvs__close" id="cvsClose" aria-label="Close"><svg class="ico"><use href="#i-close"/></svg></button>
+      <div class="cvs__demo">
+        <h3>Same question. Very different answers.</h3>
+        <div class="vs vs--big">
+          <div class="vs__col">
+            <div class="vs__label">Claude</div>
+            <div class="msg msg--user">Which entities missed their Q3 revenue target and why?</div>
+            <div class="msg msg--ai msg--weak" data-type="I don’t have access to your internal systems, so I can’t see entity-level revenue or targets. Typically, revenue misses are driven by pipeline slippage, pricing pressure, or seasonality. If you paste your data, I can help analyze it."></div>
+          </div>
+          <div class="vs__col vs__col--good">
+            <div class="vs__label">Claude <b>+ LedgerOS</b></div>
+            <div class="msg msg--user">Which entities missed their Q3 revenue target and why?</div>
+            <div class="msg msg--ai" data-type="Two of 14 entities missed target: UK Ltd (−6.2%, $310K) due to two enterprise renewals slipping to October, and Canada Inc (−3.8%, $95K) from a CAD/USD FX headwind. All other entities beat plan; consolidated revenue finished +7.0% vs budget. Sources: NetSuite GL, Salesforce opportunities, FX rates table — mapped and governed in LedgerOS."></div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+  </section>
+
+  <!-- ============ QUOTES ============ -->
+  <section class="quotes">
+    <div class="container">
+      <h2 class="quotes__h reveal">The CFO finally has a system of record</h2>
+      <div class="quotes__cards">
+        <div class="quotes__card reveal">
+          <svg class="quotes__mark"><use href="#i-quote"/></svg>
+          <p class="quotes__text">Where CROs have a CRM, <span>CFOs have Ledgerline.</span></p>
+          <div class="quotes__source"><span class="press">FINANCE WEEKLY</span></div>
+        </div>
+        <div class="quotes__card quotes__card--award reveal">
+          <svg class="quotes__mark"><use href="#i-quote"/></svg>
+          <div class="quotes__award-body">
+            <p class="quotes__award-title">Most innovative AI technology or service</p>
+            <p class="quotes__award-text">“Recognizing a commercially available AI tool or service that has enabled significant gains in productivity, customer experience, or new revenue generation across one or more industries.”</p>
+          </div>
+          <div class="quotes__award-source"><span class="award-badge"><b>AI Excellence</b><small>Awards 2026 · Winner</small></span></div>
+        </div>
+        <div class="quotes__card reveal">
+          <svg class="quotes__mark"><use href="#i-quote"/></svg>
+          <p class="quotes__body">“LedgerOS is an AI-powered data warehouse for finance teams that handles any data (however clean or messy) and serves it straight into a controlled Excel environment, where you can do whatever you want with it via Claude (or any other AI).”</p>
+          <div class="quotes__source quotes__source--cfo"><span class="avatar">CI</span><span class="press press--sm">The CFO Insider</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY ============ -->
+  <section class="fw">
+    <div class="container">
+      <div class="fw__head reveal">
+        <h2 class="fw__h">Why Ledgerline LedgerOS?</h2>
+        <p class="fw__body">All your financial data. Governed, connected, AI-ready.</p>
+      </div>
+      <div class="fw__layout reveal">
+        <div class="fw__rail" id="fwRail" role="tablist"></div>
+        <div class="fw__card" id="fwCard">
+          <div class="fw__content">
+            <span class="fw__cardnum" id="fwNum">01</span>
+            <h3 class="fw__cardname" id="fwName"></h3>
+            <p class="fw__desc" id="fwDesc"></p>
+          </div>
+          <div class="fw__media"><div class="fw__art" id="fwArt"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INDUSTRIES ============ -->
+  <section class="ind">
+    <div class="container">
+      <h2 class="ind__h reveal">Trusted by finance teams across industries</h2>
+      <div class="ind__layout reveal">
+        <div class="ind__tabs" id="indTabs" role="tablist"></div>
+        <div class="ind__card" id="indCard">
+          <div class="ind__bg" id="indBg"><svg class="ico ind__watermark"><use href="#i-factory" id="indWm"/></svg></div>
+          <div class="ind__content">
+            <span class="ind__logo" id="indLogo"></span>
+            <p class="ind__quote" id="indQuote"></p>
+            <p class="ind__name" id="indName"></p>
+            <a class="ind__more" href="#">Read full case study <svg class="ico ico--sm"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta__card reveal">
+        <div class="cta__left">
+          <h2 class="cta__h">Learn why finance teams choose Ledgerline</h2>
+          <a class="btn btn--primary btn--sm" href="#" data-demo>Request a demo <svg class="ico ico--sm"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="cta__badges">
+          <div class="badge badge--g2"><span class="badge__top">G2</span><b>Best Software</b><small>Accounting &amp; Finance</small><em>2026</em></div>
+          <div class="badge badge--g2"><span class="badge__top">G2</span><b>Leader</b><small>Mid-Market</small><em>FALL 2026</em></div>
+          <div class="badge badge--g2"><span class="badge__top">G2</span><b>Best Usability</b><small>Mid-Market</small><em>FALL 2026</em></div>
+          <div class="badge badge--cap"><span class="badge__top">Capterra</span><b>Shortlist</b><em>2026</em></div>
+          <div class="badge badge--g2 badge--alt"><span class="badge__top">G2</span><b>Momentum Leader</b><em>FALL 2026</em></div>
+          <div class="badge badge--g2"><span class="badge__top">G2</span><b>Easiest To Use</b><small>Small Business</small><em>FALL 2026</em></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <a href="#" class="logo logo--light"><span class="logo__mark" aria-hidden="true"><i></i><i></i><i></i></span><span class="logo__word">ledgerline</span></a>
+      <p>Ledgerline® is the financial operating system for modern finance teams. It consolidates data from every financial and operational data source into a single governed source of truth, and connects that data to the AI tools your team already uses. Finance teams can stay in Excel, and every number is connected, governed, and AI-ready.</p>
+    </div>
+    <div class="footer__col">
+      <h3>Solutions</h3>
+      <ul>
+        <li><a href="#">Consolidation</a></li><li><a href="#">Planning, Budgeting, and Forecasting</a></li><li><a href="#">Financial Reporting</a></li><li><a href="#">Data Visualization</a></li><li><a href="#">AI for FP&amp;A</a></li><li><a href="#">Ledgerline FP&amp;A</a></li><li><a href="#">Ledgerline Month-End Close</a></li><li><a href="#">Ledgerline Cash</a></li><li><a href="#">Ledgerline Spend Control</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h3>Blog</h3>
+      <ul>
+        <li><a href="#">FP&amp;A Analysts</a></li><li><a href="#">Consolidated Financial Statements</a></li><li><a href="#">Business Budgeting Software</a></li><li><a href="#">How to Choose the Best FP&amp;A Software</a></li><li><a href="#">Financial Dashboard</a></li><li><a href="#">Finance Glossary</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h3>Legal &amp; Compliance</h3>
+      <ul>
+        <li><a href="#">Website Terms of Use</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Data Processing Agreement</a></li><li><a href="#">AI Terms</a></li><li><a href="#">Sub Processors</a></li><li><a href="#">Trust Center</a></li><li><a href="#">Do Not Sell or Share My Personal Information</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h3>Follow Us</h3>
+      <div class="socials">
+        <a href="#" aria-label="LinkedIn"><svg class="ico"><use href="#i-linkedin"/></svg></a>
+        <a href="#" aria-label="X"><svg class="ico"><use href="#i-x"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg class="ico"><use href="#i-youtube"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg class="ico"><use href="#i-facebook"/></svg></a>
+      </div>
+      <div class="footer__certs"><span>SOC 2 Type II</span><span>ISO 27001</span><span>GDPR</span></div>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <span>© <span id="year"></span> Ledgerline Inc. All rights reserved.</span>
+    <span>Made for finance teams, everywhere.</span>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Back to top"><svg class="ico"><use href="#i-up"/></svg></button>
+
+<!-- ============ DEMO MODAL ============ -->
+<dialog class="demo-modal" id="demoModal">
+  <button class="demo-modal__close" id="demoClose" aria-label="Close"><svg class="ico"><use href="#i-close"/></svg></button>
+  <div class="demo-modal__grid">
+    <div class="demo-modal__side">
+      <p class="hero__eyebrow">Request a demo</p>
+      <h3>Drive Business Performance With Ledgerline</h3>
+      <ul>
+        <li><svg class="ico"><use href="#i-check"/></svg>See LedgerOS on your own use cases</li>
+        <li><svg class="ico"><use href="#i-check"/></svg>Connect 600+ data sources, stay in Excel</li>
+        <li><svg class="ico"><use href="#i-check"/></svg>Governed, auditable AI for finance</li>
+      </ul>
+      <div class="trust-badges trust-badges--left">
+        <div class="trust-badge"><span class="tb-meta"><span class="tb-text">Capterra: 4.8</span><span class="tb-stars" data-stars="4.8"></span></span></div>
+        <div class="trust-badge"><span class="tb-meta"><span class="tb-text">G2: 4.9</span><span class="tb-stars" data-stars="4.9"></span></span></div>
+      </div>
+    </div>
+    <form class="demo-form" id="demoForm">
+      <div class="row">
+        <label>First name<input required name="first" /></label>
+        <label>Last name<input required name="last" /></label>
+      </div>
+      <label>Work email<input required type="email" name="email" /></label>
+      <label>Company<input required name="company" /></label>
+      <div class="row">
+        <label>Phone<input type="tel" name="phone" /></label>
+        <label>Company size
+          <select name="size" required>
+            <option value="">Select…</option><option>1–50</option><option>51–200</option><option>201–500</option><option>501–1,000</option><option>1,000+</option>
+          </select>
+        </label>
+      </div>
+      <button class="btn btn--primary btn--block" type="submit">Request a Demo <svg class="ico ico--sm"><use href="#i-arrow"/></svg></button>
+      <p class="demo-form__legal">By submitting, you agree to our Privacy Policy.</p>
+    </form>
+    <div class="demo-success" id="demoSuccess" hidden>
+      <div class="demo-success__icon"><svg class="ico"><use href="#i-check"/></svg></div>
+      <h3>Thanks! We’ll be in touch shortly.</h3>
+      <p>A finance specialist will reach out within one business day to schedule your demo.</p>
+    </div>
+  </div>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
