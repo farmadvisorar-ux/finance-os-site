@@ -689,3 +689,36 @@
   .scenario-controls { grid-template-columns: 1fr; }
   .ticket-view { grid-template-columns: 1fr; }
 }
+
+/* Connector Grid & Reporting additions */
+.connector-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.conn-item {
+  background: #f8fafc;
+  border: 1px solid #e1e5ee;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.conn-item strong {
+  font-size: 14px;
+  color: var(--navy);
+}
+
+.conn-item p {
+  margin: 0;
+  font-size: 12px;
+  color: #636b83;
+}
+
+@media (max-width: 900px) {
+  .connector-grid { grid-template-columns: 1fr; }
+}

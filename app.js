@@ -293,3 +293,22 @@ function initSimulateSync() {
     showToast('Bank Feeds Re-queried: Open Banking API reporting all balances current.');
   });
 }
+
+// Additional Master features listeners
+document.getElementById('btnRegenApiKey')?.addEventListener('click', () => {
+  showToast('New Master Production API Key Generated: sk_live_finos_9984812a');
+});
+
+document.querySelectorAll('.btn-dl').forEach(b => {
+  b.addEventListener('click', () => {
+    showToast('Report package downloaded successfully.');
+  });
+});
+
+document.getElementById('btnGenReport')?.addEventListener('click', () => {
+  showToast('New Custom Financial Statement Compiled & Exported.');
+});
+
+document.getElementById('btnExportAuditLog')?.addEventListener('click', () => {
+  showToast('Immutable SOC-2 Audit Trail Exported (.CSV).');
+});

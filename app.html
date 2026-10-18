@@ -3,134 +3,165 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ledgerline FinanceOS — Enterprise Workspace</title>
+  <title>Ledgerline FinanceOS — Master Suite (100% Full Unlocked Access)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="app.css" />
 </head>
 <body class="app-page">
 
-<!-- ============ APP TOP BAR ============ -->
+<!-- SVG Sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></symbol>
+    <symbol id="i-checklist" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M20 7V5a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15v12H5a2 2 0 0 1-2-2V6"/><circle cx="16" cy="14" r="1.5"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></symbol>
+    <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5h13L22 12v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-6z"/></symbol>
+    <symbol id="i-table" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 2v6M15 2v6M6 8h12v4a6 6 0 0 1-12 0zM12 18v4"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9h-4a2 2 0 0 0 0 4h2a2 2 0 0 1 0 4H9M12 6v2M12 16v2"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============ TOP BAR ============ -->
 <header class="app-topbar">
   <div class="app-topbar__left">
     <a href="index.html" class="logo logo--light">
       <span class="logo__mark" aria-hidden="true"><i></i><i></i><i></i></span>
       <span class="logo__word">ledgerline</span>
     </a>
-    <span class="unlocked-pill">⚡ ENTERPRISE UNLOCKED · ALL FEATURES ACCESSIBLE</span>
+    <span class="unlocked-pill">⚡ FULL SYSTEM ACCESS · ALL 10 PRODUCTS & SUITES UNLOCKED</span>
   </div>
   <div class="app-topbar__center">
-    <div class="live-status"><i class="pulse-dot"></i> 600+ Connectors Synced · Zero Paywall</div>
+    <div class="live-status"><i class="pulse-dot"></i> Live ERP Gateway Connected · 0 Restrictions · Unlimited AI</div>
   </div>
   <div class="app-topbar__right">
     <div class="user-chip">
-      <span class="user-chip__avatar">AD</span>
+      <span class="user-chip__avatar">SU</span>
       <div class="user-chip__details">
-        <strong id="userDisplayName">admin@ledgerline.internal</strong>
-        <small>Master Admin (Full Rights)</small>
+        <strong id="userDisplayName">superadmin@ledgerline.internal</strong>
+        <small>Role: Root Controller (Full Read/Write/Execute)</small>
       </div>
-      <button class="btn-logout" id="btnLogout" title="Switch User">Sign Out</button>
+      <a href="index.html" class="btn-logout" title="Exit to Public Site">Site View</a>
     </div>
   </div>
 </header>
 
-<!-- ============ APP CONTAINER ============ -->
+<!-- ============ APP SHELL ============ -->
 <div class="app-shell">
-  <!-- SIDEBAR -->
+  <!-- SIDEBAR NAVIGATION -->
   <aside class="app-shell__sidebar">
-    <div class="sidebar-section-title">FINANCE SUITE (UNLOCKED)</div>
+    <div class="sidebar-section-title">ALL UNLOCKED PRODUCTS</div>
     <ul class="nav-links">
       <li class="is-active" data-tab="overview">
         <svg class="ico"><use href="#i-grid"/></svg>
-        <span>Executive Overview</span>
+        <span>1. Executive Dashboard</span>
       </li>
       <li data-tab="fpa">
         <svg class="ico"><use href="#i-trend"/></svg>
-        <span>FP&A & Budgeting</span>
+        <span>2. Datarails FP&A</span>
       </li>
       <li data-tab="close">
         <svg class="ico"><use href="#i-checklist"/></svg>
-        <span>Month-End Close</span>
+        <span>3. Month-End Close</span>
       </li>
       <li data-tab="cash">
         <svg class="ico"><use href="#i-wallet"/></svg>
-        <span>13-Week Cash Forecast</span>
+        <span>4. Datarails Cash</span>
       </li>
       <li data-tab="spend">
         <svg class="ico"><use href="#i-card"/></svg>
-        <span>Spend & PO Approval</span>
+        <span>5. Datarails Spend</span>
       </li>
       <li data-tab="desk">
         <svg class="ico"><use href="#i-inbox"/></svg>
-        <span>Desk & AI Tickets</span>
+        <span>6. Datarails Desk AI</span>
+      </li>
+      <li data-tab="connector">
+        <svg class="ico"><use href="#i-plug"/></svg>
+        <span>7. AI Connector (Hub)</span>
       </li>
       <li data-tab="excel">
         <svg class="ico"><use href="#i-table"/></svg>
-        <span>Live Excel Modeler</span>
+        <span>8. Excel Bi-Directional</span>
+      </li>
+      <li data-tab="reports">
+        <svg class="ico"><use href="#i-file"/></svg>
+        <span>9. Financial Reporting</span>
+      </li>
+      <li data-tab="audit">
+        <svg class="ico"><use href="#i-shield"/></svg>
+        <span>10. Governance & Audit</span>
       </li>
     </ul>
 
-    <div class="sidebar-section-title">INTELLIGENCE</div>
+    <div class="sidebar-section-title">AI COPILOT TERMINAL</div>
     <div class="ai-sidecard">
       <div class="ai-sidecard__header">
         <svg class="ico ico--pink"><use href="#i-spark"/></svg>
-        <strong>Ledgerline Copilot</strong>
+        <strong>FinanceOS Genius AI</strong>
       </div>
-      <p>Governed AI connected directly to GL & Data Warehouse.</p>
-      <button class="btn btn--primary btn--sm btn--block" id="btnSideAiQuery">Run Audit Query</button>
+      <p>Instant query tool with direct zero-latency grounding in your GL.</p>
+      <button class="btn btn--primary btn--sm btn--block" id="btnSideAiQuery">Run Audit Inspection</button>
     </div>
   </aside>
 
-  <!-- MAIN WORKSPACE -->
+  <!-- CONTENT VIEWPORTS -->
   <main class="app-shell__content" id="appMainArea">
 
-    <!-- TAB 1: EXECUTIVE OVERVIEW -->
+    <!-- 1. OVERVIEW -->
     <section class="tab-panel is-active" id="panel-overview">
       <div class="panel-header">
         <div>
           <h2>Executive Consolidated Overview</h2>
-          <p class="subtitle">Live data aggregated across 14 legal entities and 6 multi-currency accounts.</p>
+          <p class="subtitle">Complete real-time consolidation of 14 subsidiaries across USD, EUR, GBP, and SGD.</p>
         </div>
         <div class="panel-header__actions">
-          <button class="action-btn" id="btnSimulateSync">↻ Sync 600+ ERP Feeds</button>
-          <button class="action-btn action-btn--primary" id="btnExportBoardPack">Download Board Pack (XLSX)</button>
+          <button class="action-btn" id="btnSimulateSync">↻ Refresh 600+ ERP Syncs</button>
+          <button class="action-btn action-btn--primary" id="btnExportBoardPack">Download Master Board Pack (XLSX)</button>
         </div>
       </div>
 
-      <!-- KPI METRICS -->
       <div class="kpi-banner">
         <div class="kpi-card">
-          <span class="kpi-card__label">Consolidated Revenue YTD</span>
+          <span class="kpi-card__label">Consolidated Revenue (YTD)</span>
           <div class="kpi-card__val" id="kpiRevenue">$48,240,000</div>
-          <span class="kpi-card__delta up">▲ 14.2% vs Plan ($42.2M)</span>
+          <span class="kpi-card__delta up">▲ +14.2% vs Budget ($42.2M)</span>
         </div>
         <div class="kpi-card">
           <span class="kpi-card__label">Gross Margin</span>
           <div class="kpi-card__val" id="kpiMargin">64.8%</div>
-          <span class="kpi-card__delta up">▲ +2.4 pt vs Q2 (62.4%)</span>
+          <span class="kpi-card__delta up">▲ +2.4 pt QoQ</span>
         </div>
         <div class="kpi-card">
-          <span class="kpi-card__label">Cash Runway</span>
+          <span class="kpi-card__label">Total Cash on Hand</span>
           <div class="kpi-card__val" id="kpiCash">$24,850,000</div>
-          <span class="kpi-card__delta up">▲ 18.4 months runway</span>
+          <span class="kpi-card__delta up">▲ 18.4 Mo Runway</span>
         </div>
         <div class="kpi-card">
-          <span class="kpi-card__label">Operating Efficiency</span>
-          <div class="kpi-card__val">94.2%</div>
-          <span class="kpi-card__delta up">▲ Zero reconciliation errors</span>
+          <span class="kpi-card__label">System Health</span>
+          <div class="kpi-card__val">100% OK</div>
+          <span class="kpi-card__delta up">● All 600+ APIs Active</span>
         </div>
       </div>
 
-      <!-- WORKBENCH CARDS -->
       <div class="workbench-grid">
         <div class="dash-card">
           <div class="dash-card__header">
-            <h3>Revenue by Segment vs Plan</h3>
-            <span class="tag tag--green">Live GL Feeds</span>
+            <h3>Revenue by Division (Live General Ledger)</h3>
+            <span class="tag tag--green">Synced Real-Time</span>
           </div>
-          <div class="chart-canvas" id="overviewChartArea">
+          <div class="chart-canvas">
             <div class="bar-row">
               <span>Enterprise Software</span>
               <div class="track"><div class="fill" style="width: 88%;"></div></div>
@@ -151,38 +182,38 @@
 
         <div class="dash-card">
           <div class="dash-card__header">
-            <h3>Instant AI Assistant (Unlimited)</h3>
-            <span class="tag tag--pink">Audit Grounded</span>
+            <h3>FinanceOS Genius AI Assistant (Full Clearance)</h3>
+            <span class="tag tag--pink">Uncensored Finance Access</span>
           </div>
           <div class="copilot-box">
             <div class="copilot-box__history" id="copilotHistory">
               <div class="chat-msg chat-msg--assistant">
-                <strong>Ledgerline AI:</strong> All paywalls have been removed. You have administrative clearance to interrogate any account, execute consolidation runs, adjust forecasts, and approve procurement workflows. How can I assist your team today?
+                <strong>FinanceOS Genius:</strong> You have Root Controller access. You can interrogate any journal entry, initiate multi-currency consolidations, approve purchase requisitions, run driver scenarios, and dispatch response tickets. What would you like to execute?
               </div>
             </div>
             <form class="copilot-box__input" id="copilotForm">
               <input type="text" id="copilotPrompt" placeholder="Ask anything about GL, headcount, cash or margin variance..." />
-              <button type="submit" class="btn btn--primary btn--sm">Ask Copilot</button>
+              <button type="submit" class="btn btn--primary btn--sm">Ask Genius</button>
             </form>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TAB 2: FP&A -->
+    <!-- 2. FP&A -->
     <section class="tab-panel" id="panel-fpa">
       <div class="panel-header">
         <div>
-          <h2>FP&A & Scenario Modeling</h2>
-          <p class="subtitle">Run real-time what-if driver simulations without breaking Excel models.</p>
+          <h2>Datarails FP&A Suite (Planning & Forecasting)</h2>
+          <p class="subtitle">Driver-based financial models with instant what-if scenario simulations.</p>
         </div>
         <div class="panel-header__actions">
-          <button class="action-btn action-btn--primary" id="btnRunScenario">Run New Driver Scenario</button>
+          <button class="action-btn action-btn--primary" id="btnRunScenario">Apply High-Growth Drivers</button>
         </div>
       </div>
 
       <div class="dash-card">
-        <h3>Driver-Based Scenario Engine</h3>
+        <h3>Dynamic Scenario Modeling Engine</h3>
         <div class="scenario-controls">
           <div class="control-group">
             <label>Headcount Growth Rate: <b id="valHeadcount">15%</b></label>
@@ -198,7 +229,7 @@
           </div>
         </div>
 
-        <div class="scenario-result-box" id="scenarioResultBox">
+        <div class="scenario-result-box">
           <div class="res-item">
             <span>Projected Annual Net ARR:</span>
             <strong id="resArr">$54,200,000</strong>
@@ -208,36 +239,36 @@
             <strong id="resCash">$28,140,000</strong>
           </div>
           <div class="res-item">
-            <span>EBITDA Margin:</span>
+            <span>Projected EBITDA Margin:</span>
             <strong id="resEbitda" class="up">26.8%</strong>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TAB 3: MONTH-END CLOSE -->
+    <!-- 3. MONTH-END CLOSE -->
     <section class="tab-panel" id="panel-close">
       <div class="panel-header">
         <div>
-          <h2>Month-End Close Command Center</h2>
-          <p class="subtitle">Track task dependencies, automated balance reconciliation, and auditor signoffs.</p>
+          <h2>Datarails Month-End Close Command Center</h2>
+          <p class="subtitle">Real-time checklist, intercompany elimination schedules, and automated GL matching.</p>
         </div>
-        <button class="action-btn action-btn--primary" id="btnMarkAllClose">Approve All Pending Tasks</button>
+        <button class="action-btn action-btn--primary" id="btnMarkAllClose">Approve & Sign Off All Items</button>
       </div>
 
       <div class="dash-card">
         <div class="close-progress-bar">
           <div class="close-progress-bar__fill" id="closeBarFill" style="width: 82%;"></div>
         </div>
-        <p class="close-status-text" id="closeStatusText"><strong>82% Completed</strong> — 41 of 50 activities reconciled</p>
+        <p class="close-status-text" id="closeStatusText"><strong>82% Completed</strong> — 41 of 50 activities reconciled and validated</p>
 
         <table class="data-table" id="tableClose">
           <thead>
             <tr>
               <th>Task Description</th>
-              <th>Owner</th>
-              <th>System</th>
-              <th>Status</th>
+              <th>Assigned Controller</th>
+              <th>Connected Source</th>
+              <th>Current Status</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -275,14 +306,14 @@
       </div>
     </section>
 
-    <!-- TAB 4: 13-WEEK CASH -->
+    <!-- 4. CASH -->
     <section class="tab-panel" id="panel-cash">
       <div class="panel-header">
         <div>
-          <h2>13-Week Direct Cash Flow Forecast</h2>
-          <p class="subtitle">Daily aggregated bank balances with predictive AR/AP liquidation schedules.</p>
+          <h2>Datarails Cash (13-Week Cash Forecasting)</h2>
+          <p class="subtitle">Real-time visibility into bank accounts, daily liquidation, and FX variances.</p>
         </div>
-        <button class="action-btn" id="btnSyncBanks">Refresh Open Banking Feeds</button>
+        <button class="action-btn action-btn--primary" id="btnSyncBanks">Refresh Open Banking Feeds</button>
       </div>
 
       <div class="dash-card">
@@ -330,14 +361,14 @@
       </div>
     </section>
 
-    <!-- TAB 5: SPEND & POs -->
+    <!-- 5. SPEND -->
     <section class="tab-panel" id="panel-spend">
       <div class="panel-header">
         <div>
-          <h2>Spend Management & PO Control</h2>
-          <p class="subtitle">Real-time budget impact check before procurement commits funds.</p>
+          <h2>Datarails Spend & Purchase Order Control</h2>
+          <p class="subtitle">Complete procurement pipeline. Pre-check budget impacts before funds are committed.</p>
         </div>
-        <button class="action-btn action-btn--primary" id="btnCreatePO">+ Create Purchase Requisition</button>
+        <button class="action-btn action-btn--primary" id="btnCreatePO">+ Create New Purchase Order</button>
       </div>
 
       <div class="dash-card">
@@ -378,12 +409,12 @@
       </div>
     </section>
 
-    <!-- TAB 6: DESK -->
+    <!-- 6. DESK -->
     <section class="tab-panel" id="panel-desk">
       <div class="panel-header">
         <div>
-          <h2>Ledgerline Desk (AI Finance Service Desk)</h2>
-          <p class="subtitle">Incoming stakeholder requests auto-mapped to GL data with pre-drafted replies.</p>
+          <h2>Datarails Desk (Finance Helpdesk AI)</h2>
+          <p class="subtitle">Auto-ticket intake connected to GL balances with instant AI-drafted responses.</p>
         </div>
       </div>
 
@@ -416,14 +447,37 @@
       </div>
     </section>
 
-    <!-- TAB 7: LIVE EXCEL MODELER -->
+    <!-- 7. CONNECTOR HUB -->
+    <section class="tab-panel" id="panel-connector">
+      <div class="panel-header">
+        <div>
+          <h2>FinanceOS AI Connector (Integration Hub)</h2>
+          <p class="subtitle">Bi-directional connection between external LLMs (Claude, OpenAI) and governed GL models.</p>
+        </div>
+        <button class="action-btn action-btn--primary" id="btnRegenApiKey">Generate New Master API Key</button>
+      </div>
+
+      <div class="dash-card">
+        <h3>Connected Financial Systems (600+ Active)</h3>
+        <div class="connector-grid">
+          <div class="conn-item"><strong>NetSuite ERP</strong><span class="tag tag--green">Connected</span><p>Daily auto-reconcile enabled.</p></div>
+          <div class="conn-item"><strong>Salesforce CRM</strong><span class="tag tag--green">Connected</span><p>Pipeline & bookings synced.</p></div>
+          <div class="conn-item"><strong>Workday / ADP</strong><span class="tag tag--green">Connected</span><p>Headcount & payroll actuals live.</p></div>
+          <div class="conn-item"><strong>Snowflake Warehouse</strong><span class="tag tag--green">Connected</span><p>Direct SQL data lake bridge.</p></div>
+          <div class="conn-item"><strong>Claude 3.5 / OpenAI</strong><span class="tag tag--green">Active</span><p>Governed schema and audit trail enabled.</p></div>
+          <div class="conn-item"><strong>Open Banking API</strong><span class="tag tag--green">Connected</span><p>6 international banks reporting live.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. EXCEL MODELER -->
     <section class="tab-panel" id="panel-excel">
       <div class="panel-header">
         <div>
-          <h2>Excel Live Bi-Directional Modeling</h2>
-          <p class="subtitle">Edit values directly below to demonstrate bi-directional sync with the cloud ledger.</p>
+          <h2>Live Excel Bi-Directional Add-in Modeler</h2>
+          <p class="subtitle">Direct spreadsheet grid. Edit any number below to execute a live recalculation.</p>
         </div>
-        <button class="action-btn action-btn--primary" id="btnSimulateExcelSave">Commit Changes to Ledger</button>
+        <button class="action-btn action-btn--primary" id="btnSimulateExcelSave">Commit & Sync To Cloud Ledger</button>
       </div>
 
       <div class="dash-card">
@@ -461,6 +515,102 @@
             <div class="down">-2.1%</div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- 9. FINANCIAL REPORTING -->
+    <section class="tab-panel" id="panel-reports">
+      <div class="panel-header">
+        <div>
+          <h2>Automated Financial Reporting Studio</h2>
+          <p class="subtitle">Instantly generate GAAP, IFRS, and management reporting packages.</p>
+        </div>
+        <button class="action-btn action-btn--primary" id="btnGenReport">Generate Consolidated Report</button>
+      </div>
+
+      <div class="dash-card">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Report Package</th>
+              <th>Frequency</th>
+              <th>Format</th>
+              <th>Last Generated</th>
+              <th>Download</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Q3 Consolidated P&L & Balance Sheet</td>
+              <td>Quarterly</td>
+              <td>Excel (.xlsx) / PDF</td>
+              <td>Today at 08:30 AM</td>
+              <td><button class="action-btn action-btn--sm btn-dl">Download</button></td>
+            </tr>
+            <tr>
+              <td>Departmental Budget vs Actual Variance Report</td>
+              <td>Monthly</td>
+              <td>Interactive Dashboard</td>
+              <td>Yesterday</td>
+              <td><button class="action-btn action-btn--sm btn-dl">Download</button></td>
+            </tr>
+            <tr>
+              <td>Board of Directors Presentation Deck</td>
+              <td>Quarterly</td>
+              <td>PowerPoint (.pptx)</td>
+              <td>2 days ago</td>
+              <td><button class="action-btn action-btn--sm btn-dl">Download</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 10. AUDIT & GOVERNANCE -->
+    <section class="tab-panel" id="panel-audit">
+      <div class="panel-header">
+        <div>
+          <h2>Governance, Access Control & Immutable Audit Trail</h2>
+          <p class="subtitle">Full SOC-2 compliance log tracing every data modification, AI prompt, and approval.</p>
+        </div>
+        <button class="action-btn" id="btnExportAuditLog">Export Audit Vault (.CSV)</button>
+      </div>
+
+      <div class="dash-card">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>User / Service</th>
+              <th>Event Description</th>
+              <th>System Impact</th>
+              <th>Verification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2026-10-18 00:54:12</td>
+              <td>admin@ledgerline.internal</td>
+              <td>Auto-reconciliation approved for Barclays UK</td>
+              <td>GL Ledger #4019</td>
+              <td><span class="tag tag--green">Cryptographically Signed</span></td>
+            </tr>
+            <tr>
+              <td>2026-10-18 00:48:02</td>
+              <td>FinanceOS AI Copilot</td>
+              <td>Interrogated variance formula =LL.GET("Revenue")</td>
+              <td>Read-Only Query</td>
+              <td><span class="tag tag--green">Audit Logged</span></td>
+            </tr>
+            <tr>
+              <td>2026-10-18 00:32:19</td>
+              <td>System Task Daemon</td>
+              <td>Automated 600+ ERP sync completed</td>
+              <td>All Entities</td>
+              <td><span class="tag tag--green">Verified 100%</span></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
