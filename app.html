@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ledgerline FinanceOS — Enterprise Workspace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body class="app-page">
+
+<!-- ============ APP TOP BAR ============ -->
+<header class="app-topbar">
+  <div class="app-topbar__left">
+    <a href="index.html" class="logo logo--light">
+      <span class="logo__mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="logo__word">ledgerline</span>
+    </a>
+    <span class="unlocked-pill">⚡ ENTERPRISE UNLOCKED · ALL FEATURES ACCESSIBLE</span>
+  </div>
+  <div class="app-topbar__center">
+    <div class="live-status"><i class="pulse-dot"></i> 600+ Connectors Synced · Zero Paywall</div>
+  </div>
+  <div class="app-topbar__right">
+    <div class="user-chip">
+      <span class="user-chip__avatar">AD</span>
+      <div class="user-chip__details">
+        <strong id="userDisplayName">admin@ledgerline.internal</strong>
+        <small>Master Admin (Full Rights)</small>
+      </div>
+      <button class="btn-logout" id="btnLogout" title="Switch User">Sign Out</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ APP CONTAINER ============ -->
+<div class="app-shell">
+  <!-- SIDEBAR -->
+  <aside class="app-shell__sidebar">
+    <div class="sidebar-section-title">FINANCE SUITE (UNLOCKED)</div>
+    <ul class="nav-links">
+      <li class="is-active" data-tab="overview">
+        <svg class="ico"><use href="#i-grid"/></svg>
+        <span>Executive Overview</span>
+      </li>
+      <li data-tab="fpa">
+        <svg class="ico"><use href="#i-trend"/></svg>
+        <span>FP&A & Budgeting</span>
+      </li>
+      <li data-tab="close">
+        <svg class="ico"><use href="#i-checklist"/></svg>
+        <span>Month-End Close</span>
+      </li>
+      <li data-tab="cash">
+        <svg class="ico"><use href="#i-wallet"/></svg>
+        <span>13-Week Cash Forecast</span>
+      </li>
+      <li data-tab="spend">
+        <svg class="ico"><use href="#i-card"/></svg>
+        <span>Spend & PO Approval</span>
+      </li>
+      <li data-tab="desk">
+        <svg class="ico"><use href="#i-inbox"/></svg>
+        <span>Desk & AI Tickets</span>
+      </li>
+      <li data-tab="excel">
+        <svg class="ico"><use href="#i-table"/></svg>
+        <span>Live Excel Modeler</span>
+      </li>
+    </ul>
+
+    <div class="sidebar-section-title">INTELLIGENCE</div>
+    <div class="ai-sidecard">
+      <div class="ai-sidecard__header">
+        <svg class="ico ico--pink"><use href="#i-spark"/></svg>
+        <strong>Ledgerline Copilot</strong>
+      </div>
+      <p>Governed AI connected directly to GL & Data Warehouse.</p>
+      <button class="btn btn--primary btn--sm btn--block" id="btnSideAiQuery">Run Audit Query</button>
+    </div>
+  </aside>
+
+  <!-- MAIN WORKSPACE -->
+  <main class="app-shell__content" id="appMainArea">
+
+    <!-- TAB 1: EXECUTIVE OVERVIEW -->
+    <section class="tab-panel is-active" id="panel-overview">
+      <div class="panel-header">
+        <div>
+          <h2>Executive Consolidated Overview</h2>
+          <p class="subtitle">Live data aggregated across 14 legal entities and 6 multi-currency accounts.</p>
+        </div>
+        <div class="panel-header__actions">
+          <button class="action-btn" id="btnSimulateSync">↻ Sync 600+ ERP Feeds</button>
+          <button class="action-btn action-btn--primary" id="btnExportBoardPack">Download Board Pack (XLSX)</button>
+        </div>
+      </div>
+
+      <!-- KPI METRICS -->
+      <div class="kpi-banner">
+        <div class="kpi-card">
+          <span class="kpi-card__label">Consolidated Revenue YTD</span>
+          <div class="kpi-card__val" id="kpiRevenue">$48,240,000</div>
+          <span class="kpi-card__delta up">▲ 14.2% vs Plan ($42.2M)</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-card__label">Gross Margin</span>
+          <div class="kpi-card__val" id="kpiMargin">64.8%</div>
+          <span class="kpi-card__delta up">▲ +2.4 pt vs Q2 (62.4%)</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-card__label">Cash Runway</span>
+          <div class="kpi-card__val" id="kpiCash">$24,850,000</div>
+          <span class="kpi-card__delta up">▲ 18.4 months runway</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-card__label">Operating Efficiency</span>
+          <div class="kpi-card__val">94.2%</div>
+          <span class="kpi-card__delta up">▲ Zero reconciliation errors</span>
+        </div>
+      </div>
+
+      <!-- WORKBENCH CARDS -->
+      <div class="workbench-grid">
+        <div class="dash-card">
+          <div class="dash-card__header">
+            <h3>Revenue by Segment vs Plan</h3>
+            <span class="tag tag--green">Live GL Feeds</span>
+          </div>
+          <div class="chart-canvas" id="overviewChartArea">
+            <div class="bar-row">
+              <span>Enterprise Software</span>
+              <div class="track"><div class="fill" style="width: 88%;"></div></div>
+              <b>$26.4M</b>
+            </div>
+            <div class="bar-row">
+              <span>Mid-Market SaaS</span>
+              <div class="track"><div class="fill" style="width: 74%;"></div></div>
+              <b>$14.2M</b>
+            </div>
+            <div class="bar-row">
+              <span>Professional Services</span>
+              <div class="track"><div class="fill" style="width: 52%;"></div></div>
+              <b>$7.64M</b>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-card__header">
+            <h3>Instant AI Assistant (Unlimited)</h3>
+            <span class="tag tag--pink">Audit Grounded</span>
+          </div>
+          <div class="copilot-box">
+            <div class="copilot-box__history" id="copilotHistory">
+              <div class="chat-msg chat-msg--assistant">
+                <strong>Ledgerline AI:</strong> All paywalls have been removed. You have administrative clearance to interrogate any account, execute consolidation runs, adjust forecasts, and approve procurement workflows. How can I assist your team today?
+              </div>
+            </div>
+            <form class="copilot-box__input" id="copilotForm">
+              <input type="text" id="copilotPrompt" placeholder="Ask anything about GL, headcount, cash or margin variance..." />
+              <button type="submit" class="btn btn--primary btn--sm">Ask Copilot</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: FP&A -->
+    <section class="tab-panel" id="panel-fpa">
+      <div class="panel-header">
+        <div>
+          <h2>FP&A & Scenario Modeling</h2>
+          <p class="subtitle">Run real-time what-if driver simulations without breaking Excel models.</p>
+        </div>
+        <div class="panel-header__actions">
+          <button class="action-btn action-btn--primary" id="btnRunScenario">Run New Driver Scenario</button>
+        </div>
+      </div>
+
+      <div class="dash-card">
+        <h3>Driver-Based Scenario Engine</h3>
+        <div class="scenario-controls">
+          <div class="control-group">
+            <label>Headcount Growth Rate: <b id="valHeadcount">15%</b></label>
+            <input type="range" min="0" max="50" value="15" id="sliderHeadcount" />
+          </div>
+          <div class="control-group">
+            <label>Enterprise Churn (Annual): <b id="valChurn">4.5%</b></label>
+            <input type="range" min="1" max="15" value="4.5" step="0.5" id="sliderChurn" />
+          </div>
+          <div class="control-group">
+            <label>CAC Payback Adjustment: <b id="valCac">9 Mo</b></label>
+            <input type="range" min="3" max="24" value="9" id="sliderCac" />
+          </div>
+        </div>
+
+        <div class="scenario-result-box" id="scenarioResultBox">
+          <div class="res-item">
+            <span>Projected Annual Net ARR:</span>
+            <strong id="resArr">$54,200,000</strong>
+          </div>
+          <div class="res-item">
+            <span>Estimated Ending Cash:</span>
+            <strong id="resCash">$28,140,000</strong>
+          </div>
+          <div class="res-item">
+            <span>EBITDA Margin:</span>
+            <strong id="resEbitda" class="up">26.8%</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: MONTH-END CLOSE -->
+    <section class="tab-panel" id="panel-close">
+      <div class="panel-header">
+        <div>
+          <h2>Month-End Close Command Center</h2>
+          <p class="subtitle">Track task dependencies, automated balance reconciliation, and auditor signoffs.</p>
+        </div>
+        <button class="action-btn action-btn--primary" id="btnMarkAllClose">Approve All Pending Tasks</button>
+      </div>
+
+      <div class="dash-card">
+        <div class="close-progress-bar">
+          <div class="close-progress-bar__fill" id="closeBarFill" style="width: 82%;"></div>
+        </div>
+        <p class="close-status-text" id="closeStatusText"><strong>82% Completed</strong> — 41 of 50 activities reconciled</p>
+
+        <table class="data-table" id="tableClose">
+          <thead>
+            <tr>
+              <th>Task Description</th>
+              <th>Owner</th>
+              <th>System</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bank Account Reconciliation (JPMorgan & Barclays)</td>
+              <td>Alex Morgan</td>
+              <td>NetSuite / Plaid</td>
+              <td><span class="badge-status badge-status--done">Reconciled</span></td>
+              <td><button class="btn-tbl-action" disabled>Completed</button></td>
+            </tr>
+            <tr>
+              <td>Intercompany Elimination Entry (#IC-2026-9)</td>
+              <td>Elena Gomez</td>
+              <td>Global ERP</td>
+              <td><span class="badge-status badge-status--pending">Pending Signoff</span></td>
+              <td><button class="btn-tbl-action btn-approve-task">Sign Off</button></td>
+            </tr>
+            <tr>
+              <td>Deferred Revenue Waterfalls & Recognition</td>
+              <td>Sarah Jenkins</td>
+              <td>Salesforce Billing</td>
+              <td><span class="badge-status badge-status--pending">Review Needed</span></td>
+              <td><button class="btn-tbl-action btn-approve-task">Sign Off</button></td>
+            </tr>
+            <tr>
+              <td>Fixed Assets & Depreciation Posting</td>
+              <td>David Chen</td>
+              <td>Workday</td>
+              <td><span class="badge-status badge-status--done">Reconciled</span></td>
+              <td><button class="btn-tbl-action" disabled>Completed</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TAB 4: 13-WEEK CASH -->
+    <section class="tab-panel" id="panel-cash">
+      <div class="panel-header">
+        <div>
+          <h2>13-Week Direct Cash Flow Forecast</h2>
+          <p class="subtitle">Daily aggregated bank balances with predictive AR/AP liquidation schedules.</p>
+        </div>
+        <button class="action-btn" id="btnSyncBanks">Refresh Open Banking Feeds</button>
+      </div>
+
+      <div class="dash-card">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Entity / Bank Account</th>
+              <th>Currency</th>
+              <th>Available Cash</th>
+              <th>Week +4 Projected</th>
+              <th>Week +13 Projected</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>US Operating Account (JPMorgan Chase)</td>
+              <td>USD</td>
+              <td>$14,210,000</td>
+              <td>$15,800,000</td>
+              <td>$18,450,000</td>
+            </tr>
+            <tr>
+              <td>UK & EMEA Treasury (Barclays Commercial)</td>
+              <td>GBP (£)</td>
+              <td>£5,420,000</td>
+              <td>£5,180,000</td>
+              <td>£6,100,000</td>
+            </tr>
+            <tr>
+              <td>APAC Operational Clearing (HSBC SG)</td>
+              <td>SGD</td>
+              <td>$4,150,000</td>
+              <td>$4,300,000</td>
+              <td>$4,800,000</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>Consolidated Net Liquidity</strong></td>
+              <td><strong>USD Equivalent</strong></td>
+              <td><strong>$24,850,000</strong></td>
+              <td><strong>$26,240,000</strong></td>
+              <td><strong>$30,120,000</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TAB 5: SPEND & POs -->
+    <section class="tab-panel" id="panel-spend">
+      <div class="panel-header">
+        <div>
+          <h2>Spend Management & PO Control</h2>
+          <p class="subtitle">Real-time budget impact check before procurement commits funds.</p>
+        </div>
+        <button class="action-btn action-btn--primary" id="btnCreatePO">+ Create Purchase Requisition</button>
+      </div>
+
+      <div class="dash-card">
+        <table class="data-table" id="tableSpend">
+          <thead>
+            <tr>
+              <th>Requisition / Vendor</th>
+              <th>Department</th>
+              <th>Amount</th>
+              <th>Budget Impact</th>
+              <th>Approval</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>AWS Annual Reserved Instances Renewal</td>
+              <td>Infrastructure</td>
+              <td>$84,000</td>
+              <td>72% of Q4 Allocation</td>
+              <td><button class="action-btn action-btn--sm btn-po-approve">Approve PO</button></td>
+            </tr>
+            <tr>
+              <td>Dreamforce 2026 Sponsorship Package</td>
+              <td>Marketing</td>
+              <td>$28,500</td>
+              <td>91% of Q4 Allocation</td>
+              <td><button class="action-btn action-btn--sm btn-po-approve">Approve PO</button></td>
+            </tr>
+            <tr>
+              <td>MacBook Pro M-Series Engineering Refresh (12 units)</td>
+              <td>IT Systems</td>
+              <td>$29,400</td>
+              <td>45% of Q4 Allocation</td>
+              <td><button class="action-btn action-btn--sm btn-po-approve">Approve PO</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TAB 6: DESK -->
+    <section class="tab-panel" id="panel-desk">
+      <div class="panel-header">
+        <div>
+          <h2>Ledgerline Desk (AI Finance Service Desk)</h2>
+          <p class="subtitle">Incoming stakeholder requests auto-mapped to GL data with pre-drafted replies.</p>
+        </div>
+      </div>
+
+      <div class="dash-card">
+        <div class="ticket-view">
+          <div class="ticket-list">
+            <div class="ticket-item is-selected" data-ticket="1">
+              <strong>#T-1082: Travel Budget for Sales EMEA</strong>
+              <small>From: Maya Lin · 12 mins ago</small>
+            </div>
+            <div class="ticket-item" data-ticket="2">
+              <strong>#T-1083: Vendor Payment Confirmation #8821</strong>
+              <small>From: CloudScale Inc · 40 mins ago</small>
+            </div>
+            <div class="ticket-item" data-ticket="3">
+              <strong>#T-1084: Q4 Headcount Quota Status</strong>
+              <small>From: VP Engineering · 2 hours ago</small>
+            </div>
+          </div>
+          <div class="ticket-detail" id="ticketDetailArea">
+            <h3>#T-1082: Travel Budget for Sales EMEA</h3>
+            <p><strong>Query:</strong> "Hey finance team, can I get a breakdown of our EMEA sales travel burn through Q3 so far?"</p>
+            <div class="ai-draft-box">
+              <span class="ai-draft-badge"><svg class="ico"><use href="#i-spark"/></svg> AI-Drafted Response (Grounded in NetSuite GL)</span>
+              <p>Hi Maya, your EMEA Sales travel expenditure through Q3 is <strong>$142,380</strong>, which represents <strong>94% of planned pacing</strong>. The largest drivers were the London executive retreat ($38K) and Munich conference attendance ($27K). Your remaining budget balance through year-end is <strong>$57,620</strong>.</p>
+              <button class="btn btn--primary btn--sm" id="btnSendTicket">Approve & Send to Slack/Email</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 7: LIVE EXCEL MODELER -->
+    <section class="tab-panel" id="panel-excel">
+      <div class="panel-header">
+        <div>
+          <h2>Excel Live Bi-Directional Modeling</h2>
+          <p class="subtitle">Edit values directly below to demonstrate bi-directional sync with the cloud ledger.</p>
+        </div>
+        <button class="action-btn action-btn--primary" id="btnSimulateExcelSave">Commit Changes to Ledger</button>
+      </div>
+
+      <div class="dash-card">
+        <div class="excel-sim-grid">
+          <div class="grid-row grid-row--header">
+            <div>Line Item</div>
+            <div>Actual (Q1)</div>
+            <div>Actual (Q2)</div>
+            <div>Forecast (Q3)</div>
+            <div>Forecast (Q4)</div>
+            <div>Variance</div>
+          </div>
+          <div class="grid-row">
+            <div>Enterprise Subscriptions</div>
+            <div><input type="text" value="$9,800,000" class="xl-cell" /></div>
+            <div><input type="text" value="$10,400,000" class="xl-cell" /></div>
+            <div><input type="text" value="$11,800,000" class="xl-cell" /></div>
+            <div><input type="text" value="$13,200,000" class="xl-cell" /></div>
+            <div class="up">+14.2%</div>
+          </div>
+          <div class="grid-row">
+            <div>Professional Services</div>
+            <div><input type="text" value="$1,200,000" class="xl-cell" /></div>
+            <div><input type="text" value="$1,500,000" class="xl-cell" /></div>
+            <div><input type="text" value="$1,650,000" class="xl-cell" /></div>
+            <div><input type="text" value="$1,800,000" class="xl-cell" /></div>
+            <div class="up">+5.8%</div>
+          </div>
+          <div class="grid-row">
+            <div>Sales & Marketing Spend</div>
+            <div><input type="text" value="($3,400,000)" class="xl-cell" /></div>
+            <div><input type="text" value="($3,800,000)" class="xl-cell" /></div>
+            <div><input type="text" value="($4,100,000)" class="xl-cell" /></div>
+            <div><input type="text" value="($4,200,000)" class="xl-cell" /></div>
+            <div class="down">-2.1%</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ============ TOAST NOTIFICATION ============ -->
+<div class="toast" id="appToast">Operation Successful</div>
+
+<script src="app.js"></script>
+</body>
+</html>
