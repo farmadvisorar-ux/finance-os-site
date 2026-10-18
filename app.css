@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Ledgerline Enterprise Application Styling
+   Ledgerline Enterprise Application Styling + Custom Input Additions
    ========================================================================== */
 
 .app-page {
@@ -19,6 +19,7 @@
   justify-content: space-between;
   padding: 0 24px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 16px;
 }
 
 .app-topbar__left {
@@ -36,6 +37,25 @@
   letter-spacing: 0.5px;
   padding: 4px 10px;
   border-radius: 999px;
+  white-space: nowrap;
+}
+
+.btn-top-custom {
+  background: linear-gradient(135deg, #ffa310, #f93576);
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+
+.btn-top-custom:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(249, 53, 118, 0.4);
 }
 
 .pulse-dot {
@@ -58,6 +78,13 @@
 .live-status {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.75);
+  white-space: nowrap;
+}
+
+.app-topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .user-chip {
@@ -101,7 +128,7 @@
   padding: 4px 10px;
   border-radius: 6px;
   cursor: pointer;
-  margin-left: 8px;
+  text-decoration: none;
   transition: all 0.2s;
 }
 
@@ -356,7 +383,7 @@
 /* Bar Rows */
 .bar-row {
   display: grid;
-  grid-template-columns: 140px 1fr 60px;
+  grid-template-columns: 180px 1fr 90px;
   align-items: center;
   gap: 12px;
   font-size: 13px;
@@ -429,7 +456,216 @@
   outline: none;
 }
 
-/* Data Tables */
+/* ================= CUSTOM DATA INPUT FORM ================= */
+.custom-data-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-section {
+  border-bottom: 1px solid #edf0f7;
+  padding-bottom: 20px;
+}
+
+.form-section h3 {
+  margin: 0 0 14px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--pink);
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.form-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.form-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.custom-data-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #4b5268;
+}
+
+.custom-data-form input,
+.custom-data-form select {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px 12px;
+  border: 1px solid #d5dae7;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s;
+  background: #fff;
+}
+
+.custom-data-form input:focus,
+.custom-data-form select:focus {
+  border-color: var(--pink);
+  box-shadow: 0 0 0 3px rgba(249, 53, 118, 0.15);
+}
+
+.split-input {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 6px;
+}
+
+.auto-calc-preview {
+  margin-top: 14px;
+  background: #f8fafc;
+  border: 1px dashed #d5dae7;
+  border-radius: 8px;
+  padding: 12px 18px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #4b5268;
+}
+
+.auto-calc-preview strong {
+  color: var(--navy);
+  margin-left: 4px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* ================= CSV UPLOAD DROPZONE ================= */
+.upload-dropzone {
+  border: 2px dashed #cfd5e3;
+  border-radius: 12px;
+  padding: 48px 24px;
+  text-align: center;
+  background: #fafbfd;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.upload-dropzone:hover,
+.upload-dropzone.dragover {
+  border-color: var(--pink);
+  background: #fff9fb;
+}
+
+.upload-icon {
+  width: 44px;
+  height: 44px;
+  color: var(--pink);
+}
+
+.upload-dropzone h3 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--navy);
+}
+
+.upload-dropzone p {
+  margin: 0 0 8px;
+  color: #7b8398;
+  font-size: 13px;
+}
+
+.upload-preview {
+  margin-top: 24px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid #e1e5ee;
+  border-radius: 8px;
+  margin: 12px 0 16px;
+}
+
+/* ================= SPREADSHEET GRID ================= */
+.excel-sim-grid {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #d5dae7;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.grid-row {
+  display: grid;
+  grid-template-columns: 240px repeat(4, 1fr) 110px;
+  border-bottom: 1px solid #e1e5ee;
+}
+
+.grid-row--header {
+  background: #f0f3f8;
+  font-weight: 600;
+  font-size: 12px;
+  color: #4b5268;
+}
+
+.grid-row > div {
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+}
+
+.grid-row > div:not(:first-child) {
+  border-left: 1px solid #e1e5ee;
+  justify-content: flex-end;
+}
+
+.xl-cell-desc {
+  width: 100%;
+  border: 1px solid transparent;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 4px;
+}
+
+.xl-cell {
+  width: 100%;
+  border: 1px solid transparent;
+  background: transparent;
+  text-align: right;
+  font-family: 'JetBrains Mono', Consolas, monospace;
+  font-size: 13px;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.xl-cell:focus, .xl-cell-desc:focus {
+  background: #fff;
+  border-color: #00936c;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 147, 108, 0.2);
+}
+
+.xl-total {
+  font-family: 'JetBrains Mono', Consolas, monospace;
+  font-size: 13px;
+}
+
+/* ================= DATA TABLES ================= */
 .data-table {
   width: 100%;
   border-collapse: collapse;
@@ -607,57 +843,6 @@
   margin-bottom: 8px;
 }
 
-/* Excel Sim Grid */
-.excel-sim-grid {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #d5dae7;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.grid-row {
-  display: grid;
-  grid-template-columns: 220px repeat(4, 1fr) 90px;
-  border-bottom: 1px solid #e1e5ee;
-}
-
-.grid-row--header {
-  background: #f0f3f8;
-  font-weight: 600;
-  font-size: 12px;
-  color: #4b5268;
-}
-
-.grid-row > div {
-  padding: 8px 12px;
-  display: flex;
-  align-items: center;
-}
-
-.grid-row > div:not(:first-child) {
-  border-left: 1px solid #e1e5ee;
-  justify-content: flex-end;
-}
-
-.xl-cell {
-  width: 100%;
-  border: 1px solid transparent;
-  background: transparent;
-  text-align: right;
-  font-family: Consolas, monospace;
-  font-size: 13px;
-  padding: 4px 6px;
-  border-radius: 4px;
-}
-
-.xl-cell:focus {
-  background: #fff;
-  border-color: #00936c;
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(0, 147, 108, 0.2);
-}
-
 /* Toast */
 .toast {
   position: fixed;
@@ -688,37 +873,5 @@
   .workbench-grid { grid-template-columns: 1fr; }
   .scenario-controls { grid-template-columns: 1fr; }
   .ticket-view { grid-template-columns: 1fr; }
-}
-
-/* Connector Grid & Reporting additions */
-.connector-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 10px;
-}
-
-.conn-item {
-  background: #f8fafc;
-  border: 1px solid #e1e5ee;
-  border-radius: 10px;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.conn-item strong {
-  font-size: 14px;
-  color: var(--navy);
-}
-
-.conn-item p {
-  margin: 0;
-  font-size: 12px;
-  color: #636b83;
-}
-
-@media (max-width: 900px) {
-  .connector-grid { grid-template-columns: 1fr; }
+  .form-grid-3, .form-grid-4, .form-grid-2 { grid-template-columns: 1fr; }
 }

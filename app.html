@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ledgerline FinanceOS — Master Suite (100% Full Unlocked Access)</title>
+  <title>Ledgerline FinanceOS — Custom Financial Data Studio (100% Unlocked)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -29,7 +29,7 @@
     <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
     <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/><path d="m9 12 2 2 4-4"/></symbol>
-    <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9h-4a2 2 0 0 0 0 4h2a2 2 0 0 1 0 4H9M12 6v2M12 16v2"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></symbol>
   </defs>
 </svg>
 
@@ -40,17 +40,18 @@
       <span class="logo__mark" aria-hidden="true"><i></i><i></i><i></i></span>
       <span class="logo__word">ledgerline</span>
     </a>
-    <span class="unlocked-pill">⚡ FULL SYSTEM ACCESS · ALL 10 PRODUCTS & SUITES UNLOCKED</span>
+    <span class="unlocked-pill">⚡ CUSTOM DATA STUDIO ACTIVE · FULL READ/WRITE</span>
   </div>
   <div class="app-topbar__center">
-    <div class="live-status"><i class="pulse-dot"></i> Live ERP Gateway Connected · 0 Restrictions · Unlimited AI</div>
+    <div class="live-status"><i class="pulse-dot"></i> Live Custom Mode · Local Browser Persistence · 0 Paywall</div>
   </div>
   <div class="app-topbar__right">
+    <button class="btn-top-custom" id="btnQuickEnterData">✍ Enter / Edit My Info</button>
     <div class="user-chip">
-      <span class="user-chip__avatar">SU</span>
+      <span class="user-chip__avatar" id="userAvatar">MY</span>
       <div class="user-chip__details">
-        <strong id="userDisplayName">superadmin@ledgerline.internal</strong>
-        <small>Role: Root Controller (Full Read/Write/Execute)</small>
+        <strong id="userDisplayName">My Organization</strong>
+        <small id="userRoleSubtitle">Owner & CFO (Full Rights)</small>
       </div>
       <a href="index.html" class="btn-logout" title="Exit to Public Site">Site View</a>
     </div>
@@ -61,166 +62,357 @@
 <div class="app-shell">
   <!-- SIDEBAR NAVIGATION -->
   <aside class="app-shell__sidebar">
-    <div class="sidebar-section-title">ALL UNLOCKED PRODUCTS</div>
+    <div class="sidebar-section-title">CUSTOM DATA TOOLS</div>
     <ul class="nav-links">
       <li class="is-active" data-tab="overview">
         <svg class="ico"><use href="#i-grid"/></svg>
-        <span>1. Executive Dashboard</span>
+        <span>1. My Dashboard</span>
       </li>
-      <li data-tab="fpa">
-        <svg class="ico"><use href="#i-trend"/></svg>
-        <span>2. Datarails FP&A</span>
+      <li data-tab="mydata">
+        <svg class="ico"><use href="#i-file"/></svg>
+        <span>★ Enter My Company Info</span>
       </li>
-      <li data-tab="close">
-        <svg class="ico"><use href="#i-checklist"/></svg>
-        <span>3. Month-End Close</span>
-      </li>
-      <li data-tab="cash">
-        <svg class="ico"><use href="#i-wallet"/></svg>
-        <span>4. Datarails Cash</span>
-      </li>
-      <li data-tab="spend">
-        <svg class="ico"><use href="#i-card"/></svg>
-        <span>5. Datarails Spend</span>
-      </li>
-      <li data-tab="desk">
-        <svg class="ico"><use href="#i-inbox"/></svg>
-        <span>6. Datarails Desk AI</span>
-      </li>
-      <li data-tab="connector">
-        <svg class="ico"><use href="#i-plug"/></svg>
-        <span>7. AI Connector (Hub)</span>
+      <li data-tab="csvupload">
+        <svg class="ico"><use href="#i-layers"/></svg>
+        <span>★ Upload CSV / Excel</span>
       </li>
       <li data-tab="excel">
         <svg class="ico"><use href="#i-table"/></svg>
-        <span>8. Excel Bi-Directional</span>
+        <span>2. Live Spreadsheet Grid</span>
+      </li>
+      <li data-tab="fpa">
+        <svg class="ico"><use href="#i-trend"/></svg>
+        <span>3. FP&A & Scenarios</span>
+      </li>
+      <li data-tab="close">
+        <svg class="ico"><use href="#i-checklist"/></svg>
+        <span>4. Close Checklist</span>
+      </li>
+      <li data-tab="cash">
+        <svg class="ico"><use href="#i-wallet"/></svg>
+        <span>5. Cash Forecast</span>
+      </li>
+      <li data-tab="spend">
+        <svg class="ico"><use href="#i-card"/></svg>
+        <span>6. Spend & PO Control</span>
+      </li>
+      <li data-tab="desk">
+        <svg class="ico"><use href="#i-inbox"/></svg>
+        <span>7. Desk & AI Tickets</span>
       </li>
       <li data-tab="reports">
         <svg class="ico"><use href="#i-file"/></svg>
-        <span>9. Financial Reporting</span>
-      </li>
-      <li data-tab="audit">
-        <svg class="ico"><use href="#i-shield"/></svg>
-        <span>10. Governance & Audit</span>
+        <span>8. Export My Reports</span>
       </li>
     </ul>
 
-    <div class="sidebar-section-title">AI COPILOT TERMINAL</div>
+    <div class="sidebar-section-title">CUSTOM AI COPILOT</div>
     <div class="ai-sidecard">
       <div class="ai-sidecard__header">
         <svg class="ico ico--pink"><use href="#i-spark"/></svg>
-        <strong>FinanceOS Genius AI</strong>
+        <strong>Grounded in My Data</strong>
       </div>
-      <p>Instant query tool with direct zero-latency grounding in your GL.</p>
-      <button class="btn btn--primary btn--sm btn--block" id="btnSideAiQuery">Run Audit Inspection</button>
+      <p>Queries respond directly against the numbers and line items you enter.</p>
+      <button class="btn btn--primary btn--sm btn--block" id="btnSideAiQuery">Ask Copilot</button>
     </div>
   </aside>
 
   <!-- CONTENT VIEWPORTS -->
   <main class="app-shell__content" id="appMainArea">
 
-    <!-- 1. OVERVIEW -->
+    <!-- TAB 1: OVERVIEW (DISPLAYING USER'S ENTERED INFO) -->
     <section class="tab-panel is-active" id="panel-overview">
       <div class="panel-header">
         <div>
-          <h2>Executive Consolidated Overview</h2>
-          <p class="subtitle">Complete real-time consolidation of 14 subsidiaries across USD, EUR, GBP, and SGD.</p>
+          <h2 id="headerCompanyName">My Company Financial Overview</h2>
+          <p class="subtitle" id="headerCompanySub">Live numbers calculated directly from your input data.</p>
         </div>
         <div class="panel-header__actions">
-          <button class="action-btn" id="btnSimulateSync">↻ Refresh 600+ ERP Syncs</button>
-          <button class="action-btn action-btn--primary" id="btnExportBoardPack">Download Master Board Pack (XLSX)</button>
+          <button class="action-btn action-btn--primary" id="btnHeaderEditData">✍ Edit My Numbers</button>
+          <button class="action-btn" id="btnResetDefaults">Reset to Demo Defaults</button>
         </div>
       </div>
 
       <div class="kpi-banner">
         <div class="kpi-card">
-          <span class="kpi-card__label">Consolidated Revenue (YTD)</span>
-          <div class="kpi-card__val" id="kpiRevenue">$48,240,000</div>
-          <span class="kpi-card__delta up">▲ +14.2% vs Budget ($42.2M)</span>
+          <span class="kpi-card__label">My Total Revenue</span>
+          <div class="kpi-card__val" id="dispRevenue">$10,000,000</div>
+          <span class="kpi-card__delta up" id="dispRevenueDelta">▲ +12.5% vs budget</span>
         </div>
         <div class="kpi-card">
-          <span class="kpi-card__label">Gross Margin</span>
-          <div class="kpi-card__val" id="kpiMargin">64.8%</div>
-          <span class="kpi-card__delta up">▲ +2.4 pt QoQ</span>
+          <span class="kpi-card__label">My Gross Margin</span>
+          <div class="kpi-card__val" id="dispMargin">65.0%</div>
+          <span class="kpi-card__delta up" id="dispMarginDelta">▲ Target met</span>
         </div>
         <div class="kpi-card">
-          <span class="kpi-card__label">Total Cash on Hand</span>
-          <div class="kpi-card__val" id="kpiCash">$24,850,000</div>
-          <span class="kpi-card__delta up">▲ 18.4 Mo Runway</span>
+          <span class="kpi-card__label">Available Cash</span>
+          <div class="kpi-card__val" id="dispCash">$4,500,000</div>
+          <span class="kpi-card__delta up" id="dispRunway">▲ 14 Months Runway</span>
         </div>
         <div class="kpi-card">
-          <span class="kpi-card__label">System Health</span>
-          <div class="kpi-card__val">100% OK</div>
-          <span class="kpi-card__delta up">● All 600+ APIs Active</span>
+          <span class="kpi-card__label">Annual OpEx</span>
+          <div class="kpi-card__val" id="dispOpex">$3,500,000</div>
+          <span class="kpi-card__delta" id="dispEntities">● 1 Entity Active</span>
         </div>
       </div>
 
       <div class="workbench-grid">
         <div class="dash-card">
           <div class="dash-card__header">
-            <h3>Revenue by Division (Live General Ledger)</h3>
-            <span class="tag tag--green">Synced Real-Time</span>
+            <h3>Revenue Breakdown by Segment</h3>
+            <span class="tag tag--green">Live Calculation</span>
           </div>
-          <div class="chart-canvas">
-            <div class="bar-row">
-              <span>Enterprise Software</span>
-              <div class="track"><div class="fill" style="width: 88%;"></div></div>
-              <b>$26.4M</b>
-            </div>
-            <div class="bar-row">
-              <span>Mid-Market SaaS</span>
-              <div class="track"><div class="fill" style="width: 74%;"></div></div>
-              <b>$14.2M</b>
-            </div>
-            <div class="bar-row">
-              <span>Professional Services</span>
-              <div class="track"><div class="fill" style="width: 52%;"></div></div>
-              <b>$7.64M</b>
-            </div>
+          <div class="chart-canvas" id="customBarChart">
+            <!-- Dynamic Bar Chart built by app.js -->
           </div>
         </div>
 
         <div class="dash-card">
           <div class="dash-card__header">
-            <h3>FinanceOS Genius AI Assistant (Full Clearance)</h3>
-            <span class="tag tag--pink">Uncensored Finance Access</span>
+            <h3>FinanceOS Genius AI (Trained on Your Info)</h3>
+            <span class="tag tag--pink">Personalized AI</span>
           </div>
           <div class="copilot-box">
             <div class="copilot-box__history" id="copilotHistory">
-              <div class="chat-msg chat-msg--assistant">
-                <strong>FinanceOS Genius:</strong> You have Root Controller access. You can interrogate any journal entry, initiate multi-currency consolidations, approve purchase requisitions, run driver scenarios, and dispatch response tickets. What would you like to execute?
+              <div class="chat-msg chat-msg--assistant" id="aiWelcomeMsg">
+                <strong>FinanceOS Genius:</strong> I am connected to your custom company data. Ask me anything about your revenue, cash runway, expenses, or projections!
               </div>
             </div>
             <form class="copilot-box__input" id="copilotForm">
-              <input type="text" id="copilotPrompt" placeholder="Ask anything about GL, headcount, cash or margin variance..." />
-              <button type="submit" class="btn btn--primary btn--sm">Ask Genius</button>
+              <input type="text" id="copilotPrompt" placeholder="Ask about your revenue, cash runway, or margins..." />
+              <button type="submit" class="btn btn--primary btn--sm">Ask</button>
             </form>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 2. FP&A -->
-    <section class="tab-panel" id="panel-fpa">
+    <!-- TAB: ENTER MY COMPANY INFO (THE PRIMARY USER INPUT FORM) -->
+    <section class="tab-panel" id="panel-mydata">
       <div class="panel-header">
         <div>
-          <h2>Datarails FP&A Suite (Planning & Forecasting)</h2>
-          <p class="subtitle">Driver-based financial models with instant what-if scenario simulations.</p>
+          <h2>★ Enter & Customize Your Financial Information</h2>
+          <p class="subtitle">Update company details, financials, bank balances, and segments below. Everything updates across all tools immediately.</p>
         </div>
-        <div class="panel-header__actions">
-          <button class="action-btn action-btn--primary" id="btnRunScenario">Apply High-Growth Drivers</button>
+        <button class="action-btn action-btn--primary" id="btnSaveCompanyInfoTop">💾 Save All Changes</button>
+      </div>
+
+      <div class="dash-card">
+        <form id="formCustomInfo" class="custom-data-form">
+          <div class="form-section">
+            <h3>1. Company & Entity Profile</h3>
+            <div class="form-grid-3">
+              <label>Company Name
+                <input type="text" id="inpCompName" value="Acme Corporation" required />
+              </label>
+              <label>Industry
+                <select id="inpIndustry">
+                  <option>Software & SaaS</option>
+                  <option>E-Commerce & Retail</option>
+                  <option>Manufacturing</option>
+                  <option>Healthcare</option>
+                  <option>Professional Services</option>
+                  <option>Construction & Real Estate</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <label>Primary Base Currency
+                <select id="inpCurrency">
+                  <option value="USD">USD ($)</option>
+                  <option value="EUR">EUR (€)</option>
+                  <option value="GBP">GBP (£)</option>
+                  <option value="CAD">CAD ($)</option>
+                  <option value="AUD">AUD ($)</option>
+                  <option value="SGD">SGD ($)</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>2. Key Financial Numbers (Annual / YTD)</h3>
+            <div class="form-grid-4">
+              <label>Total Annual Revenue ($)
+                <input type="number" id="inpRevenue" value="12500000" step="1000" required />
+              </label>
+              <label>Cost of Goods Sold (COGS) ($)
+                <input type="number" id="inpCogs" value="4375000" step="1000" required />
+              </label>
+              <label>Operating Expenses (OpEx) ($)
+                <input type="number" id="inpOpex" value="4800000" step="1000" required />
+              </label>
+              <label>Current Total Cash on Hand ($)
+                <input type="number" id="inpCash" value="5200000" step="1000" required />
+              </label>
+            </div>
+            <div class="auto-calc-preview">
+              <span>Gross Profit: <strong id="previewGrossProfit">$8,125,000</strong></span>
+              <span>Gross Margin: <strong id="previewMargin">65.0%</strong></span>
+              <span>Net Income (EBITDA): <strong id="previewEbitda">$3,325,000</strong></span>
+              <span>Est. Cash Runway: <strong id="previewRunway">13.0 Months</strong></span>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>3. Revenue Segments & Products</h3>
+            <div class="form-grid-3">
+              <label>Segment 1 Name & Revenue ($)
+                <div class="split-input">
+                  <input type="text" id="inpSeg1Name" value="Core Product / Subscriptions" />
+                  <input type="number" id="inpSeg1Val" value="7500000" />
+                </div>
+              </label>
+              <label>Segment 2 Name & Revenue ($)
+                <div class="split-input">
+                  <input type="text" id="inpSeg2Name" value="Enterprise Add-ons" />
+                  <input type="number" id="inpSeg2Val" value="3500000" />
+                </div>
+              </label>
+              <label>Segment 3 Name & Revenue ($)
+                <div class="split-input">
+                  <input type="text" id="inpSeg3Name" value="Professional Services" />
+                  <input type="number" id="inpSeg3Val" value="1500000" />
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>4. Bank & Liquidity Accounts</h3>
+            <div class="form-grid-2">
+              <label>Primary Operating Bank & Balance ($)
+                <div class="split-input">
+                  <input type="text" id="inpBank1Name" value="JPMorgan Chase Operating" />
+                  <input type="number" id="inpBank1Val" value="3800000" />
+                </div>
+              </label>
+              <label>Secondary / Treasury Bank & Balance ($)
+                <div class="split-input">
+                  <input type="text" id="inpBank2Name" value="Silicon Valley / Barclays Treasury" />
+                  <input type="number" id="inpBank2Val" value="1400000" />
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn--primary">💾 Save & Apply Everywhere</button>
+            <button type="button" class="btn btn--secondary" id="btnCancelEdit">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- TAB: CSV / EXCEL UPLOAD -->
+    <section class="tab-panel" id="panel-csvupload">
+      <div class="panel-header">
+        <div>
+          <h2>★ Upload CSV / Excel File</h2>
+          <p class="subtitle">Drop your own financial statement or trial balance file to populate all models.</p>
         </div>
       </div>
 
       <div class="dash-card">
-        <h3>Dynamic Scenario Modeling Engine</h3>
+        <div class="upload-dropzone" id="dropZone">
+          <svg class="ico upload-icon"><use href="#i-upload"/></svg>
+          <h3>Drag and drop your CSV or Excel file here</h3>
+          <p>Or click to browse from your device (.csv, .xlsx, .txt)</p>
+          <input type="file" id="fileInput" accept=".csv, .xlsx, .txt" style="display:none;" />
+          <button type="button" class="action-btn action-btn--primary" onclick="document.getElementById('fileInput').click()">Browse Files</button>
+        </div>
+
+        <div class="upload-preview" id="uploadPreview" hidden>
+          <h3>Parsed Data Preview:</h3>
+          <div class="table-wrap" id="parsedTableContainer"></div>
+          <button class="btn btn--primary btn--sm" id="btnImportParsed">Apply Parsed Data to Dashboard</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB: SPREADSHEET (DIRECT EDIT CELLS) -->
+    <section class="tab-panel" id="panel-excel">
+      <div class="panel-header">
+        <div>
+          <h2>Interactive Spreadsheet Grid</h2>
+          <p class="subtitle">Click and edit any cell directly. Changes immediately recalculate your model.</p>
+        </div>
+        <button class="action-btn action-btn--primary" id="btnSimulateExcelSave">Commit Cells to Model</button>
+      </div>
+
+      <div class="dash-card">
+        <div class="excel-sim-grid" id="excelGrid">
+          <div class="grid-row grid-row--header">
+            <div>Line Item Description</div>
+            <div>Q1 Actual</div>
+            <div>Q2 Actual</div>
+            <div>Q3 Forecast</div>
+            <div>Q4 Forecast</div>
+            <div>Full Year</div>
+          </div>
+          <div class="grid-row">
+            <div><input type="text" class="xl-cell-desc" value="Gross Revenue" /></div>
+            <div><input type="number" class="xl-cell xl-calc" value="2800000" /></div>
+            <div><input type="number" class="xl-cell xl-calc" value="3100000" /></div>
+            <div><input type="number" class="xl-cell xl-calc" value="3250000" /></div>
+            <div><input type="number" class="xl-cell xl-calc" value="3350000" /></div>
+            <div class="xl-total b up">$12,500,000</div>
+          </div>
+          <div class="grid-row">
+            <div><input type="text" class="xl-cell-desc" value="Cost of Goods (COGS)" /></div>
+            <div><input type="number" class="xl-cell xl-calc" value="980000" /></div>
+            <div><input type="number" class="xl-cell xl-calc" value="1080000" /></div>
+            <div><input type="number" class="xl-cell xl-calc" value="1135000" /></div>
+            <div><input type="number" class="xl-cell xl-calc" value="1180000" /></div>
+            <div class="xl-total b down">$4,375,000</div>
+          </div>
+          <div class="grid-row">
+            <div><input type="text" class="xl-cell-desc" value="Sales & Marketing" /></div>
+            <div><input type="number" class="xl-cell xl-calc" value="500000" /></div>
+            <div><input type="number" class="xl-cell xl-calc" value="550000" /></div>
+            <div><input type="number" class="xl-cell xl-calc" value="580000" /></div>
+            <div><input type="number" class="xl-cell xl-calc" value="620000" /></div>
+            <div class="xl-total b">$2,250,000</div>
+          </div>
+          <div class="grid-row">
+            <div><input type="text" class="xl-cell-desc" value="R&D / Engineering" /></div>
+            <div><input type="number" class="xl-cell xl-calc" value="380000" /></div>
+            <div><input type="number" class="xl-cell xl-calc" value="410000" /></div>
+            <div><input type="number" class="xl-cell xl-calc" value="440000" /></div>
+            <div><input type="number" class="xl-cell xl-calc" value="470000" /></div>
+            <div class="xl-total b">$1,700,000</div>
+          </div>
+          <div class="grid-row">
+            <div><input type="text" class="xl-cell-desc" value="General & Admin (G&A)" /></div>
+            <div><input type="number" class="xl-cell xl-calc" value="190000" /></div>
+            <div><input type="number" class="xl-cell xl-calc" value="210000" /></div>
+            <div><input type="number" class="xl-cell xl-calc" value="220000" /></div>
+            <div><input type="number" class="xl-cell xl-calc" value="230000" /></div>
+            <div class="xl-total b">$850,000</div>
+          </div>
+        </div>
+        <button class="action-btn" id="btnAddGridRow">+ Add Custom Row</button>
+      </div>
+    </section>
+
+    <!-- TAB: FP&A SCENARIOS -->
+    <section class="tab-panel" id="panel-fpa">
+      <div class="panel-header">
+        <div>
+          <h2>FP&A Scenario Modeling Engine</h2>
+          <p class="subtitle">Run real-time what-if driver simulations on your custom baseline.</p>
+        </div>
+        <button class="action-btn action-btn--primary" id="btnRunScenario">Apply High-Growth Drivers</button>
+      </div>
+
+      <div class="dash-card">
+        <h3>Driver Modifiers</h3>
         <div class="scenario-controls">
           <div class="control-group">
             <label>Headcount Growth Rate: <b id="valHeadcount">15%</b></label>
             <input type="range" min="0" max="50" value="15" id="sliderHeadcount" />
           </div>
           <div class="control-group">
-            <label>Enterprise Churn (Annual): <b id="valChurn">4.5%</b></label>
+            <label>Customer Churn: <b id="valChurn">4.5%</b></label>
             <input type="range" min="1" max="15" value="4.5" step="0.5" id="sliderChurn" />
           </div>
           <div class="control-group">
@@ -232,11 +424,11 @@
         <div class="scenario-result-box">
           <div class="res-item">
             <span>Projected Annual Net ARR:</span>
-            <strong id="resArr">$54,200,000</strong>
+            <strong id="resArr">$14,200,000</strong>
           </div>
           <div class="res-item">
             <span>Estimated Ending Cash:</span>
-            <strong id="resCash">$28,140,000</strong>
+            <strong id="resCash">$6,140,000</strong>
           </div>
           <div class="res-item">
             <span>Projected EBITDA Margin:</span>
@@ -246,286 +438,165 @@
       </div>
     </section>
 
-    <!-- 3. MONTH-END CLOSE -->
+    <!-- TAB: CLOSE CHECKLIST -->
     <section class="tab-panel" id="panel-close">
       <div class="panel-header">
         <div>
-          <h2>Datarails Month-End Close Command Center</h2>
-          <p class="subtitle">Real-time checklist, intercompany elimination schedules, and automated GL matching.</p>
+          <h2>Custom Month-End Close Checklist</h2>
+          <p class="subtitle">Add your own close tasks and sign them off.</p>
         </div>
-        <button class="action-btn action-btn--primary" id="btnMarkAllClose">Approve & Sign Off All Items</button>
+        <div class="panel-header__actions">
+          <button class="action-btn" id="btnAddNewCloseTask">+ Add Custom Close Task</button>
+          <button class="action-btn action-btn--primary" id="btnMarkAllClose">Sign Off All Tasks</button>
+        </div>
       </div>
 
       <div class="dash-card">
         <div class="close-progress-bar">
-          <div class="close-progress-bar__fill" id="closeBarFill" style="width: 82%;"></div>
+          <div class="close-progress-bar__fill" id="closeBarFill" style="width: 50%;"></div>
         </div>
-        <p class="close-status-text" id="closeStatusText"><strong>82% Completed</strong> — 41 of 50 activities reconciled and validated</p>
+        <p class="close-status-text" id="closeStatusText"><strong>50% Completed</strong> — 2 of 4 activities reconciled</p>
 
         <table class="data-table" id="tableClose">
           <thead>
             <tr>
               <th>Task Description</th>
-              <th>Assigned Controller</th>
-              <th>Connected Source</th>
-              <th>Current Status</th>
+              <th>Assigned Owner</th>
+              <th>Status</th>
               <th>Action</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="tbodyCloseTasks">
             <tr>
-              <td>Bank Account Reconciliation (JPMorgan & Barclays)</td>
-              <td>Alex Morgan</td>
-              <td>NetSuite / Plaid</td>
+              <td>Reconcile Primary Bank Account</td>
+              <td>Finance Lead</td>
               <td><span class="badge-status badge-status--done">Reconciled</span></td>
               <td><button class="btn-tbl-action" disabled>Completed</button></td>
             </tr>
             <tr>
-              <td>Intercompany Elimination Entry (#IC-2026-9)</td>
-              <td>Elena Gomez</td>
-              <td>Global ERP</td>
+              <td>Validate Monthly Invoices & Billing</td>
+              <td>Controller</td>
               <td><span class="badge-status badge-status--pending">Pending Signoff</span></td>
               <td><button class="btn-tbl-action btn-approve-task">Sign Off</button></td>
             </tr>
             <tr>
-              <td>Deferred Revenue Waterfalls & Recognition</td>
-              <td>Sarah Jenkins</td>
-              <td>Salesforce Billing</td>
-              <td><span class="badge-status badge-status--pending">Review Needed</span></td>
-              <td><button class="btn-tbl-action btn-approve-task">Sign Off</button></td>
-            </tr>
-            <tr>
-              <td>Fixed Assets & Depreciation Posting</td>
-              <td>David Chen</td>
-              <td>Workday</td>
+              <td>Payroll & Benefits Expense Booking</td>
+              <td>HR & Payroll</td>
               <td><span class="badge-status badge-status--done">Reconciled</span></td>
               <td><button class="btn-tbl-action" disabled>Completed</button></td>
+            </tr>
+            <tr>
+              <td>Executive P&L Review</td>
+              <td>CFO</td>
+              <td><span class="badge-status badge-status--pending">Review Needed</span></td>
+              <td><button class="btn-tbl-action btn-approve-task">Sign Off</button></td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- 4. CASH -->
+    <!-- TAB: CASH FORECAST -->
     <section class="tab-panel" id="panel-cash">
       <div class="panel-header">
         <div>
-          <h2>Datarails Cash (13-Week Cash Forecasting)</h2>
-          <p class="subtitle">Real-time visibility into bank accounts, daily liquidation, and FX variances.</p>
+          <h2>13-Week Cash Flow Direct Forecast</h2>
+          <p class="subtitle">Custom bank accounts and liquidation schedule.</p>
         </div>
-        <button class="action-btn action-btn--primary" id="btnSyncBanks">Refresh Open Banking Feeds</button>
+        <button class="action-btn action-btn--primary" id="btnSyncBanks">Recalculate 13-Week Trajectory</button>
       </div>
 
       <div class="dash-card">
-        <table class="data-table">
+        <table class="data-table" id="tableCash">
           <thead>
             <tr>
               <th>Entity / Bank Account</th>
-              <th>Currency</th>
               <th>Available Cash</th>
               <th>Week +4 Projected</th>
               <th>Week +13 Projected</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>US Operating Account (JPMorgan Chase)</td>
-              <td>USD</td>
-              <td>$14,210,000</td>
-              <td>$15,800,000</td>
-              <td>$18,450,000</td>
-            </tr>
-            <tr>
-              <td>UK & EMEA Treasury (Barclays Commercial)</td>
-              <td>GBP (£)</td>
-              <td>£5,420,000</td>
-              <td>£5,180,000</td>
-              <td>£6,100,000</td>
-            </tr>
-            <tr>
-              <td>APAC Operational Clearing (HSBC SG)</td>
-              <td>SGD</td>
-              <td>$4,150,000</td>
-              <td>$4,300,000</td>
-              <td>$4,800,000</td>
-            </tr>
-            <tr class="highlight-row">
-              <td><strong>Consolidated Net Liquidity</strong></td>
-              <td><strong>USD Equivalent</strong></td>
-              <td><strong>$24,850,000</strong></td>
-              <td><strong>$26,240,000</strong></td>
-              <td><strong>$30,120,000</strong></td>
-            </tr>
+          <tbody id="tbodyCash">
+            <!-- Populated from User Data -->
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- 5. SPEND -->
+    <!-- TAB: SPEND & POs -->
     <section class="tab-panel" id="panel-spend">
       <div class="panel-header">
         <div>
-          <h2>Datarails Spend & Purchase Order Control</h2>
-          <p class="subtitle">Complete procurement pipeline. Pre-check budget impacts before funds are committed.</p>
+          <h2>Spend Management & PO Requisition</h2>
+          <p class="subtitle">Enter your company's purchase orders and approve requisitions.</p>
         </div>
-        <button class="action-btn action-btn--primary" id="btnCreatePO">+ Create New Purchase Order</button>
+        <button class="action-btn action-btn--primary" id="btnCreatePO">+ Add My Purchase Order</button>
       </div>
 
       <div class="dash-card">
         <table class="data-table" id="tableSpend">
           <thead>
             <tr>
-              <th>Requisition / Vendor</th>
+              <th>Vendor / Description</th>
               <th>Department</th>
               <th>Amount</th>
-              <th>Budget Impact</th>
-              <th>Approval</th>
+              <th>Action</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="tbodySpend">
             <tr>
-              <td>AWS Annual Reserved Instances Renewal</td>
-              <td>Infrastructure</td>
-              <td>$84,000</td>
-              <td>72% of Q4 Allocation</td>
-              <td><button class="action-btn action-btn--sm btn-po-approve">Approve PO</button></td>
+              <td>Cloud Infrastructure Server Hosting</td>
+              <td>Engineering</td>
+              <td>$14,500</td>
+              <td><button class="action-btn action-btn--sm btn-po-approve">Approve</button></td>
             </tr>
             <tr>
-              <td>Dreamforce 2026 Sponsorship Package</td>
+              <td>Marketing Digital Advertising Budget</td>
               <td>Marketing</td>
-              <td>$28,500</td>
-              <td>91% of Q4 Allocation</td>
-              <td><button class="action-btn action-btn--sm btn-po-approve">Approve PO</button></td>
-            </tr>
-            <tr>
-              <td>MacBook Pro M-Series Engineering Refresh (12 units)</td>
-              <td>IT Systems</td>
-              <td>$29,400</td>
-              <td>45% of Q4 Allocation</td>
-              <td><button class="action-btn action-btn--sm btn-po-approve">Approve PO</button></td>
+              <td>$8,200</td>
+              <td><button class="action-btn action-btn--sm btn-po-approve">Approve</button></td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- 6. DESK -->
+    <!-- TAB: DESK & AI TICKETS -->
     <section class="tab-panel" id="panel-desk">
       <div class="panel-header">
         <div>
-          <h2>Datarails Desk (Finance Helpdesk AI)</h2>
-          <p class="subtitle">Auto-ticket intake connected to GL balances with instant AI-drafted responses.</p>
+          <h2>Custom Helpdesk AI Tickets</h2>
+          <p class="subtitle">Submit stakeholder inquiries to get AI-drafted responses grounded in your custom data.</p>
         </div>
       </div>
 
       <div class="dash-card">
         <div class="ticket-view">
-          <div class="ticket-list">
+          <div class="ticket-list" id="ticketList">
             <div class="ticket-item is-selected" data-ticket="1">
-              <strong>#T-1082: Travel Budget for Sales EMEA</strong>
-              <small>From: Maya Lin · 12 mins ago</small>
+              <strong>#T-101: Current Available Cash & Runway</strong>
+              <small>From: Board Member · 5 mins ago</small>
             </div>
             <div class="ticket-item" data-ticket="2">
-              <strong>#T-1083: Vendor Payment Confirmation #8821</strong>
-              <small>From: CloudScale Inc · 40 mins ago</small>
-            </div>
-            <div class="ticket-item" data-ticket="3">
-              <strong>#T-1084: Q4 Headcount Quota Status</strong>
-              <small>From: VP Engineering · 2 hours ago</small>
+              <strong>#T-102: Segment Revenue Breakdown</strong>
+              <small>From: Sales Lead · 30 mins ago</small>
             </div>
           </div>
           <div class="ticket-detail" id="ticketDetailArea">
-            <h3>#T-1082: Travel Budget for Sales EMEA</h3>
-            <p><strong>Query:</strong> "Hey finance team, can I get a breakdown of our EMEA sales travel burn through Q3 so far?"</p>
-            <div class="ai-draft-box">
-              <span class="ai-draft-badge"><svg class="ico"><use href="#i-spark"/></svg> AI-Drafted Response (Grounded in NetSuite GL)</span>
-              <p>Hi Maya, your EMEA Sales travel expenditure through Q3 is <strong>$142,380</strong>, which represents <strong>94% of planned pacing</strong>. The largest drivers were the London executive retreat ($38K) and Munich conference attendance ($27K). Your remaining budget balance through year-end is <strong>$57,620</strong>.</p>
-              <button class="btn btn--primary btn--sm" id="btnSendTicket">Approve & Send to Slack/Email</button>
-            </div>
+            <!-- Dynamic Content -->
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 7. CONNECTOR HUB -->
-    <section class="tab-panel" id="panel-connector">
-      <div class="panel-header">
-        <div>
-          <h2>FinanceOS AI Connector (Integration Hub)</h2>
-          <p class="subtitle">Bi-directional connection between external LLMs (Claude, OpenAI) and governed GL models.</p>
-        </div>
-        <button class="action-btn action-btn--primary" id="btnRegenApiKey">Generate New Master API Key</button>
-      </div>
-
-      <div class="dash-card">
-        <h3>Connected Financial Systems (600+ Active)</h3>
-        <div class="connector-grid">
-          <div class="conn-item"><strong>NetSuite ERP</strong><span class="tag tag--green">Connected</span><p>Daily auto-reconcile enabled.</p></div>
-          <div class="conn-item"><strong>Salesforce CRM</strong><span class="tag tag--green">Connected</span><p>Pipeline & bookings synced.</p></div>
-          <div class="conn-item"><strong>Workday / ADP</strong><span class="tag tag--green">Connected</span><p>Headcount & payroll actuals live.</p></div>
-          <div class="conn-item"><strong>Snowflake Warehouse</strong><span class="tag tag--green">Connected</span><p>Direct SQL data lake bridge.</p></div>
-          <div class="conn-item"><strong>Claude 3.5 / OpenAI</strong><span class="tag tag--green">Active</span><p>Governed schema and audit trail enabled.</p></div>
-          <div class="conn-item"><strong>Open Banking API</strong><span class="tag tag--green">Connected</span><p>6 international banks reporting live.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 8. EXCEL MODELER -->
-    <section class="tab-panel" id="panel-excel">
-      <div class="panel-header">
-        <div>
-          <h2>Live Excel Bi-Directional Add-in Modeler</h2>
-          <p class="subtitle">Direct spreadsheet grid. Edit any number below to execute a live recalculation.</p>
-        </div>
-        <button class="action-btn action-btn--primary" id="btnSimulateExcelSave">Commit & Sync To Cloud Ledger</button>
-      </div>
-
-      <div class="dash-card">
-        <div class="excel-sim-grid">
-          <div class="grid-row grid-row--header">
-            <div>Line Item</div>
-            <div>Actual (Q1)</div>
-            <div>Actual (Q2)</div>
-            <div>Forecast (Q3)</div>
-            <div>Forecast (Q4)</div>
-            <div>Variance</div>
-          </div>
-          <div class="grid-row">
-            <div>Enterprise Subscriptions</div>
-            <div><input type="text" value="$9,800,000" class="xl-cell" /></div>
-            <div><input type="text" value="$10,400,000" class="xl-cell" /></div>
-            <div><input type="text" value="$11,800,000" class="xl-cell" /></div>
-            <div><input type="text" value="$13,200,000" class="xl-cell" /></div>
-            <div class="up">+14.2%</div>
-          </div>
-          <div class="grid-row">
-            <div>Professional Services</div>
-            <div><input type="text" value="$1,200,000" class="xl-cell" /></div>
-            <div><input type="text" value="$1,500,000" class="xl-cell" /></div>
-            <div><input type="text" value="$1,650,000" class="xl-cell" /></div>
-            <div><input type="text" value="$1,800,000" class="xl-cell" /></div>
-            <div class="up">+5.8%</div>
-          </div>
-          <div class="grid-row">
-            <div>Sales & Marketing Spend</div>
-            <div><input type="text" value="($3,400,000)" class="xl-cell" /></div>
-            <div><input type="text" value="($3,800,000)" class="xl-cell" /></div>
-            <div><input type="text" value="($4,100,000)" class="xl-cell" /></div>
-            <div><input type="text" value="($4,200,000)" class="xl-cell" /></div>
-            <div class="down">-2.1%</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 9. FINANCIAL REPORTING -->
+    <!-- TAB: REPORTS & EXPORT -->
     <section class="tab-panel" id="panel-reports">
       <div class="panel-header">
         <div>
-          <h2>Automated Financial Reporting Studio</h2>
-          <p class="subtitle">Instantly generate GAAP, IFRS, and management reporting packages.</p>
+          <h2>Export My Financial Reports</h2>
+          <p class="subtitle">Download complete packages formatted with your custom company data.</p>
         </div>
-        <button class="action-btn action-btn--primary" id="btnGenReport">Generate Consolidated Report</button>
+        <button class="action-btn action-btn--primary" id="btnExportFullDataJson">Download Backup (JSON)</button>
       </div>
 
       <div class="dash-card">
@@ -533,81 +604,25 @@
           <thead>
             <tr>
               <th>Report Package</th>
-              <th>Frequency</th>
-              <th>Format</th>
-              <th>Last Generated</th>
-              <th>Download</th>
+              <th>Source Numbers</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Q3 Consolidated P&L & Balance Sheet</td>
-              <td>Quarterly</td>
-              <td>Excel (.xlsx) / PDF</td>
-              <td>Today at 08:30 AM</td>
-              <td><button class="action-btn action-btn--sm btn-dl">Download</button></td>
+              <td>My Consolidated Income Statement (P&L)</td>
+              <td>Your entered revenue ($), COGS, and OpEx</td>
+              <td><button class="action-btn action-btn--sm btn-dl-custom" data-type="pnl">Download .CSV</button></td>
             </tr>
             <tr>
-              <td>Departmental Budget vs Actual Variance Report</td>
-              <td>Monthly</td>
-              <td>Interactive Dashboard</td>
-              <td>Yesterday</td>
-              <td><button class="action-btn action-btn--sm btn-dl">Download</button></td>
+              <td>My Cash & Liquidity Report</td>
+              <td>Your entered bank balances & 13-week forecast</td>
+              <td><button class="action-btn action-btn--sm btn-dl-custom" data-type="cash">Download .CSV</button></td>
             </tr>
             <tr>
-              <td>Board of Directors Presentation Deck</td>
-              <td>Quarterly</td>
-              <td>PowerPoint (.pptx)</td>
-              <td>2 days ago</td>
-              <td><button class="action-btn action-btn--sm btn-dl">Download</button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- 10. AUDIT & GOVERNANCE -->
-    <section class="tab-panel" id="panel-audit">
-      <div class="panel-header">
-        <div>
-          <h2>Governance, Access Control & Immutable Audit Trail</h2>
-          <p class="subtitle">Full SOC-2 compliance log tracing every data modification, AI prompt, and approval.</p>
-        </div>
-        <button class="action-btn" id="btnExportAuditLog">Export Audit Vault (.CSV)</button>
-      </div>
-
-      <div class="dash-card">
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Timestamp</th>
-              <th>User / Service</th>
-              <th>Event Description</th>
-              <th>System Impact</th>
-              <th>Verification</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2026-10-18 00:54:12</td>
-              <td>admin@ledgerline.internal</td>
-              <td>Auto-reconciliation approved for Barclays UK</td>
-              <td>GL Ledger #4019</td>
-              <td><span class="tag tag--green">Cryptographically Signed</span></td>
-            </tr>
-            <tr>
-              <td>2026-10-18 00:48:02</td>
-              <td>FinanceOS AI Copilot</td>
-              <td>Interrogated variance formula =LL.GET("Revenue")</td>
-              <td>Read-Only Query</td>
-              <td><span class="tag tag--green">Audit Logged</span></td>
-            </tr>
-            <tr>
-              <td>2026-10-18 00:32:19</td>
-              <td>System Task Daemon</td>
-              <td>Automated 600+ ERP sync completed</td>
-              <td>All Entities</td>
-              <td><span class="tag tag--green">Verified 100%</span></td>
+              <td>Executive Summary Deck</td>
+              <td>KPIs & Segment margins</td>
+              <td><button class="action-btn action-btn--sm btn-dl-custom" data-type="exec">Download .CSV</button></td>
             </tr>
           </tbody>
         </table>
@@ -618,7 +633,7 @@
 </div>
 
 <!-- ============ TOAST NOTIFICATION ============ -->
-<div class="toast" id="appToast">Operation Successful</div>
+<div class="toast" id="appToast">Data Saved Successfully</div>
 
 <script src="app.js"></script>
 </body>
